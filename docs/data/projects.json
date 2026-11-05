@@ -1,7 +1,7 @@
 {
   "version": 1,
   "publishedOnly": true,
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "contact": {
     "telegram": "https://t.me/Feudorlab1",
     "phone": "+7 926 041 1145",
@@ -263,15 +263,16 @@
       "accent": "#f0b367",
       "tagline": "Студия микроконтроллеров",
       "description": "Программирование и диагностика ESP32-C3/S3 с React, FastAPI и MicroPython.",
-      "image": "https://raw.githubusercontent.com/musikfed/esp32s3devkitC-1N16R8/main/docs/screenshots/studio-preview.svg",
+      "image": "https://raw.githubusercontent.com/musikfed/esp32s3devkitC-1N16R8/main/Studio%20esp32_2.jpg",
       "stack": [
         "ESP32",
         "MicroPython",
         "React",
         "FastAPI"
       ],
-      "source": "docs/screenshots/studio-preview.svg",
-      "status": "Разработка аппаратной студии"
+      "source": "Studio esp32_2.jpg",
+      "status": "Разработка аппаратной студии",
+      "image2": "https://raw.githubusercontent.com/musikfed/esp32s3devkitC-1N16R8/main/docs/screenshots/studio-preview.svg"
     },
     {
       "id": "pgsql",

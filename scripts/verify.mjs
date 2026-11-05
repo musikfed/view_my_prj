@@ -39,6 +39,12 @@ for(const project of d.projects) {
   for (const language of supported) assert(tr.projects[project.id][language], 'Missing '+language+' for '+project.id);
   for(const id of forbidden) assert(!page.includes('github.com/musikfed/' + id), 'Private project leak '+project.id);
 }
+for (const id of ['registry-change-explorer', 'esp32s3devkitC-1N16R8']) {
+  const page = read('projects/' + id + '/index.html');
+  assert(home.includes('href="/view_my_prj/projects/' + id + '/"'), 'Showcase card missing: ' + id);
+  assert(page.includes('sandbox="allow-scripts"') && page.includes('https://musikfed.github.io/' + id + '/'), 'Standalone embedded presentation missing: ' + id);
+}
+assert(home.includes('Studio%20esp32_2.jpg') && read('projects/esp32s3devkitC-1N16R8/index.html').includes('Studio%20esp32_2.jpg'), 'Real ESP32 screenshot not shown');
 const pitoolsSite=read('pitools/index.html');
 const pitoolsDemo=read('pitools/demo.js');
 const pitoolsLegacy=read('projects/pitools/index.html');
@@ -87,7 +93,7 @@ for (const htmlFile of publishedFiles) {
     const url = new URL(ref,siteUrl);
     if (url.origin !== siteUrl.origin) continue;
     // Other independent GitHub Pages projects share this domain, not this /docs tree.
-    if (ref.startsWith('https://musikfed.github.io/achewiw/') && url.pathname.startsWith('/achewiw/')) continue;
+    if (['/achewiw/', '/registry-change-explorer/', '/esp32s3devkitC-1N16R8/'].some(prefix => url.pathname.startsWith(prefix))) continue;
     assert(url.pathname.startsWith('/view_my_prj/'), 'Public gallery link leaves its Pages base: '+relativeHtml+' -> '+ref);
     const urlPath = decodeURIComponent(url.pathname.slice('/view_my_prj/'.length));
     let target = path.resolve(docsDir,urlPath);

@@ -64,3 +64,23 @@ footer{border-top:1px solid #25333e;margin-top:70px;padding:24px 0 36px;display:
 .detail-analytics{background:linear-gradient(145deg,#182c40,#0b1622 70%)}
 .detail-reserved .project-browser{border-style:dashed}
 @media(max-width:980px){.detail-writing{background:#f6f3ed}.detail-writing .page-hero h1,.detail-writing .page-hero p{color:#293843}}
+
+
+/* Original project previews — the two applications keep distinct visual identity. */
+.spotlight-duo{margin:36px 0 74px}.spotlight-head{max-width:900px;margin-bottom:26px}.spotlight-head h2{margin:8px 0 12px}.spotlight-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.spotlight-card{display:block;min-width:0;overflow:hidden;border:1px solid #3c5368;border-radius:14px;background:#101923;transition:transform .25s,border-color .25s,box-shadow .25s}
+.spotlight-card:hover{transform:translateY(-5px);border-color:#cda979;box-shadow:0 22px 54px #0008}
+.spotlight-image{height:clamp(210px,25vw,338px);position:relative;overflow:hidden;background:#0b1522}
+.spotlight-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:top;transition:transform .45s}
+.spotlight-card:hover .spotlight-image img{transform:scale(1.03)}.spotlight-registry .spotlight-image img{object-fit:contain;background:#242527}.spotlight-esp .spotlight-image img{object-position:top}
+.spotlight-label{position:absolute;bottom:10px;left:12px;padding:6px 9px;font:700 10px "IBM Plex Mono",monospace;letter-spacing:.08em;background:#070f19dc;color:#e1eefc;border:1px solid #9caec555;border-radius:5px}
+.spotlight-info{padding:22px 25px 26px}.spotlight-info h3{font-size:clamp(21px,2.4vw,29px);margin:8px 0 12px}.spotlight-info p{font-size:14px;min-height:43px}
+.spotlight-registry .spotlight-info .mono,.spotlight-registry .spotlight-link{color:#ff8b91}.spotlight-esp .spotlight-info .mono,.spotlight-esp .spotlight-link{color:#92bdff}.spotlight-link{font-size:13px;font-weight:700}
+.native-showcase{margin:15px 0 55px;padding-top:28px;border-top:1px solid #35485b}.native-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}.native-heading h2{margin:5px 0 13px}.native-note{max-width:990px;color:#b4c6d4;font-size:13px;margin:0 0 17px}
+.native-open{display:inline-flex;padding:11px 15px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-weight:700;font-size:13px}.native-open:hover{background:#1d2b3a}
+.native-frame-wrap{overflow:hidden;background:#091522;border:1px solid #475a72;border-radius:13px;box-shadow:0 25px 70px #0008}.native-showcase.registry .native-frame-wrap{border-color:#9c525b}.native-showcase.esp .native-frame-wrap{border-color:#497dcb}
+.native-showcase iframe{width:100%;height:690px;display:block;border:0;background:#071323}
+.tile .shot img{transition:transform .3s}.tile:hover .shot img{transform:scale(1.025)}
+@media(max-width:850px){.spotlight-cards{grid-template-columns:1fr}.spotlight-image{height:280px}.native-showcase iframe{height:630px}}
+@media(max-width:550px){.spotlight-image{height:205px}.spotlight-info{padding:18px}.native-showcase iframe{height:550px}}
+@media(prefers-reduced-motion:reduce){.spotlight-card,.spotlight-image img,.tile .shot img{transition:none}.spotlight-card:hover,.spotlight-card:hover .spotlight-image img,.tile:hover .shot img{transform:none}}
