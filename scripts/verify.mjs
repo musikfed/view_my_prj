@@ -61,6 +61,8 @@ for (const htmlFile of publishedFiles) {
     if (!ref || ref.startsWith('#')) continue;
     const url = new URL(ref,siteUrl);
     if (url.origin !== siteUrl.origin) continue;
+    // Other independent GitHub Pages projects share this domain, not this /docs tree.
+    if (ref.startsWith('https://musikfed.github.io/achewiw/') && url.pathname.startsWith('/achewiw/')) continue;
     assert(url.pathname.startsWith('/view_my_prj/'), 'Public gallery link leaves its Pages base: '+relativeHtml+' -> '+ref);
     const urlPath = decodeURIComponent(url.pathname.slice('/view_my_prj/'.length));
     let target = path.resolve(docsDir,urlPath);
