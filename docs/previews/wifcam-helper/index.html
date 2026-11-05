@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WifCam Helper — read-only native HTML/CSS preview</title><meta name="robots" content="noindex">
+<style>
+:root{--nav:#111827;--ink:#111827;--muted:#64748b;--blue:#2563eb;--line:#e2e8f0;--bg:#f2f5fa}*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.shell{display:grid;grid-template-columns:254px minmax(0,1fr);min-height:100vh}
+aside{background:var(--nav);color:#e2e8f0;padding:25px 16px;display:flex;flex-direction:column;gap:25px}
+.brand{display:flex;gap:12px;align-items:center}.symbol{background:var(--blue);font-weight:900;border-radius:14px;font-size:23px;width:45px;height:45px;display:grid;place-items:center}
+.brand strong{display:block;color:white;font-size:18px}.brand small{display:block;color:#94a3b8;font-size:11px;line-height:1.3}
+nav{display:grid;gap:7px}nav button{display:flex;align-items:center;gap:10px;text-align:left;width:100%;background:transparent;color:#cbd5e1;border:0;padding:12px;border-radius:10px;font-size:14px;cursor:pointer}
+nav button:hover,nav button.active{background:#1d4ed8;color:white}.sidebar-bottom{margin-top:auto;font-size:12px;color:#94a3b8;display:grid;gap:12px}
+main{padding:30px 35px;max-width:1550px;width:100%;min-width:0}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+h1{font-size:30px;letter-spacing:-.7px;margin:0}h2{font-size:21px;margin:0 0 13px}h3{font-size:17px;margin:0 0 8px}
+.muted,small{color:var(--muted)}.badge{display:inline-flex;align-items:center;gap:8px;background:#dcfce7;color:#166534;border-radius:30px;padding:8px 13px;font-weight:700;font-size:12px}
+select,input{font:inherit;width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:11px;background:white;color:#111827}
+select{cursor:pointer}.language{width:180px}.hero{background:linear-gradient(110deg,#101e3a,#1d4ed8);padding:29px;border-radius:18px;color:white;position:relative;overflow:hidden}
+.hero:after{content:"◉";position:absolute;right:36px;top:-65px;font-size:190px;opacity:.08}.hero small{color:#93c5fd;font-weight:800;letter-spacing:1.5px}.hero h2{font-size:31px;margin:5px 0}
+.hero p{max-width:620px;color:#dbeafe}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}
+.card{background:white;border:1px solid var(--line);box-shadow:0 8px 24px #0f172a09;border-radius:15px;padding:22px;min-width:0}
+.card .ico{font-size:23px;display:block;margin-bottom:9px}.card strong{display:block;font-size:17px}.card p{color:var(--muted);font-size:13px;margin:7px 0}
+button.primary{background:var(--blue);color:white;padding:11px 16px;border-radius:9px;border:0;cursor:pointer;font:inherit;font-weight:700}
+button.primary:disabled{opacity:.5;cursor:wait}.secondary{display:inline-block;background:#e2e8f0;color:#334155;padding:10px 13px;border-radius:9px;text-decoration:none;font-weight:700}
+.panel{display:none}.panel.active{display:block}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:block;font-size:13px;color:#475569;font-weight:700;margin-bottom:5px}label span{display:block;margin-bottom:5px}
+.test-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.consent{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:9px;margin:12px 0}
+.consent input{width:18px;min-width:18px;margin:2px}.consent label{font-weight:500;cursor:pointer}
+pre{background:#0e1729;color:#d1fae5;padding:17px;border-radius:13px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:410px;overflow-y:auto;font-size:12px}
+.statusline{padding:12px;background:#eff6ff;border-radius:10px;color:#1d4ed8;margin:12px 0}
+.footerline{font-size:12px;color:#64748b;margin-top:18px}
+@media(max-width:940px){.shell{grid-template-columns:1fr}aside{padding:14px;gap:12px}nav{grid-template-columns:repeat(3,1fr)}.sidebar-bottom{display:none}main{padding:18px}.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.cards,.formgrid{grid-template-columns:1fr}nav{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start;flex-direction:column}.language{width:100%}}
+button,select,input{pointer-events:none!important} a.secondary{pointer-events:none!important}</style>
+</head><body>
+<div class="shell"><aside>
+<div class="brand"><div class="symbol">P✦</div><div><strong>WifCam Helper</strong><small data-i18n="subtitle">Испытательный стенд автономной камеры T23N</small></div></div>
+<nav id="tabs"><button data-tab="overview" class="active">◈ <span data-i18n="overview">Обзор</span></button>
+<button data-tab="capabilities">⚙ <span data-i18n="capabilities">Возможности</span></button>
+<button data-tab="video">▶ <span data-i18n="video">Видео / задержка</span></button>
+<button data-tab="audio">♫ <span data-i18n="audio">Микрофон и динамик</span></button>
+<button data-tab="profiles">▤ <span data-i18n="profiles">Профили сборки</span></button>
+<button data-tab="reports">⌁ <span data-i18n="reports">Отчёты</span></button></nav>
+<div class="sidebar-bottom"><div>CORE Huananzhi X79 · Ubuntu 24.04</div><div data-i18n="authNote">Доступ к веб-стенду только через 127.0.0.1 или SSH-туннель.</div></div></aside>
+<main><header><div><h1 id="pageTitle">WifCam Helper</h1><small data-i18n="model">Galayou G2 · SC2336 · ATBM6012BX</small></div>
+<div class="language"><label for="locale" data-i18n="language">Язык</label><select id="locale">
+<option value="ru">Русский</option><option value="en">English</option><option value="be">Беларуская</option><option value="sah">Саха тыла</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="zh-CN">简体中文</option>
+</select></div></header>
+<section class="panel active" id="overview"><div class="hero"><small data-i18n="local">Локально, без облака</small><h2 data-i18n="hero"></h2><p data-i18n="description">Измеряем то, что камера действительно умеет — без облака и без перепрошивки.</p><span class="badge" data-i18n="safe">Без записи SD и перезапуска камеры</span></div>
+<div class="cards"><div class="card"><span class="ico">◉</span><strong data-i18n="camera">Камера</strong><p data-i18n="model">Galayou G2 · SC2336 · ATBM6012BX</p></div>
+<div class="card"><span class="ico">◈</span><strong data-i18n="video">Видео / задержка</strong><p data-i18n="videoNote">Время открытия RTSP и скорость декодирования — НЕ задержка от объектива до экрана.</p></div>
+<div class="card"><span class="ico">♫</span><strong data-i18n="assistant">Голосовой напарник</strong><p data-i18n="audioNote">Для голосового напарника обязателен реальный вход микрофона и выход штатного динамика.</p></div></div>
+<div class="card"><h2 data-i18n="notice"></h2><p data-i18n="protected">SSH доступ и SD-образ сохраняются</p><p data-i18n="gpu">RTX 3060: внешняя классификация / STT / TTS, не на T23N</p></div></section>
+<section class="panel" id="capabilities"><div class="card"><h2 data-i18n="capabilities"></h2>
+<div class="formgrid"><div><label for="host" data-i18n="host">Адрес камеры</label><input id="host" placeholder="192.168.1.55" autocomplete="off"></div>
+<div><label for="user" data-i18n="user">SSH пользователь</label><input id="user" value="root" autocomplete="off"></div>
+<div><label for="key" data-i18n="key">Путь к SSH-ключу (на сервере)</label><input id="key" type="text" placeholder="~/.ssh/id_ed25519" autocomplete="off"></div></div>
+<div class="test-row"><button class="primary" data-kind="inventory" data-i18n="inventory">Проверить аппаратные возможности</button></div>
+<div class="statusline" id="inventoryNote" data-i18n="notice">Нет аппаратных результатов — наличие драйвера не подтверждает микрофон или динамик.</div></div></section>
+<section class="panel" id="video"><div class="card"><h2 data-i18n="video"></h2>
+<div class="formgrid"><div><label for="url" data-i18n="url">Адрес RTSP</label><input id="url" placeholder="rtsp://CAMERA_IP:554/ch0" autocomplete="off" spellcheck="false"></div>
+<div><label for="transport" data-i18n="transport">Передача RTSP</label><select id="transport"><option value="tcp">TCP</option><option value="udp">UDP</option></select></div></div>
+<div style="margin-top:12px"><label for="altUrl" data-i18n="altUrl">Второй RTSP-поток (если существует)</label><input id="altUrl" placeholder="rtsp://CAMERA_IP:554/ch1" autocomplete="off" spellcheck="false"></div>
+<p class="muted" data-i18n="rtspHelp">Используйте существующий поток ch0/ch1; неизвестные адреса не угадываются.</p><div class="test-row">
+<button class="primary" data-kind="probe" data-i18n="probe">Проверить дорожки RTSP</button>
+<button class="primary" data-kind="video" data-i18n="videoTest">Замерить видеотракт</button>
+<button class="primary" data-kind="compare" data-i18n="compare">Сравнить TCP/UDP и потоки</button></div>
+<div class="formgrid" style="margin-top:16px"><div><label for="modelPath" data-i18n="visionModel">Путь к локальной модели YOLO (.pt/.onnx)</label><input id="modelPath" placeholder="/models/yolo11n.pt" autocomplete="off"></div>
+<div><label for="visionDevice" data-i18n="visionDevice">Вычислитель классификации</label><select id="visionDevice"><option value="cpu">CPU</option><option value="cuda:0">RTX CUDA:0</option></select></div></div>
+<div class="consent"><input id="visionConsent" type="checkbox"><label for="visionConsent" data-i18n="visionConsent">Разрешаю обработать один кадр локально на CORE без сохранения</label></div>
+<div class="test-row"><button class="primary" data-kind="classification" data-i18n="visionTest">Проверить классификатор YOLO</button></div>
+<div class="statusline" data-i18n="videoNote">Время открытия RTSP и скорость декодирования — НЕ задержка от объектива до экрана.</div></div></section>
+<section class="panel" id="audio"><div class="card"><h2 data-i18n="audio"></h2>
+<p class="muted" data-i18n="audioNote">Для голосового напарника обязателен реальный вход микрофона и выход штатного динамика.</p>
+<div class="consent"><input id="micConsent" type="checkbox"><label for="micConsent" data-i18n="micConsent">Разрешаю короткий захват звука с моей камеры без сохранения записи</label></div>
+<div class="test-row"><button class="primary" data-kind="microphone" data-i18n="micTest">Проверить микрофон</button></div>
+<div class="consent"><input id="speakerConsent" type="checkbox"><label for="speakerConsent" data-i18n="speakerConsent">Нахожусь рядом с камерой и разрешаю тихий короткий звук</label></div>
+<div class="test-row"><button class="primary" data-kind="speaker" data-i18n="speakerTest">Проверить динамик</button></div>
+<p class="muted" data-i18n="privacy">Аудиофрагмент анализируется в памяти, в Git не публикуется.</p></div></section>
+<section class="panel" id="profiles"><div class="card"><h2 data-i18n="profiles"></h2><p data-i18n="presetNote">Профиль переносится в сборщик только после явного подтверждения. Итоги тестов не меняют ядро автоматически.</p>
+<a class="secondary" href="#preview" download="wifcam-approved-candidate.json" data-i18n="preset">Скачать безопасный профиль для YadroKreator</a><p class="muted" data-i18n="protected">SSH доступ и SD-образ сохраняются</p></div></section>
+<section class="panel" id="reports"><div class="card"><h2 data-i18n="report"></h2><pre id="report"></pre><div class="test-row"><button id="refreshHistory" class="primary" data-i18n="helperHistoryRefresh">↻ Обновить историю</button></div><h3 data-i18n="helperHistoryTitle"></h3><pre id="historyList"></pre>
+<div class="test-row"><a id="helpLink" class="secondary" href="https://github.com/musikfed/wifcam_helper/tree/main/wiki" target="_blank" rel="noopener noreferrer" data-i18n="help">Инструкция</a></div></div></section>
+<div class="footerline">Демонстрация исходного интерфейса · без подключения к камере, серверу или API</div></main></div>
+</body></html>
