@@ -21,15 +21,15 @@ for(const project of d.projects) {
   assert(page.includes('<title>') && page.includes('canonical'), 'Missing SEO metadata ' + project.id);
   assert(page.includes('github.com/musikfed/' + project.id), 'Missing source link '+project.id);
   assert(page.includes('feudor.lab@yandex.ru'), 'Missing author contacts '+project.id);
-  if(project.image){
-    assert(page.includes('raw.githubusercontent.com/'), 'Expected actual source screenshot '+project.id);
-    assert(project.image.includes('musikfed/' + project.id + '/'), 'Source image should come from corresponding repo '+project.id);
-  } else if(project.preview) {
+  if(project.preview) {
     const f = 'previews/' + project.preview + '/index.html';
     assert(fs.existsSync(new URL(f,root)), 'Missing original read-only UI '+project.id);
     const source = read(f);
     assert(!source.includes('<script'), 'UI snapshot must not execute backend JS '+project.id);
     assert(page.includes('sandbox=""'), 'UI should be sandboxed '+project.id);
+  } else if (project.image) {
+    assert(page.includes('raw.githubusercontent.com/'), 'Expected actual source screenshot '+project.id);
+    assert(project.image.includes('musikfed/' + project.id + '/'), 'Image must originate in corresponding public repo '+project.id);
   } else assert(page.includes('Исходные файлы') || page.includes('SOURCE FILES') || page.includes('Реальный исходный материал'), 'Projects without screenshot cannot invent UI '+project.id);
   assert(tr.projects[project.id], 'Missing translations '+project.id);
   for (const language of supported) assert(tr.projects[project.id][language], 'Missing '+language+' for '+project.id);
