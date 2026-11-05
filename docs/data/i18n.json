@@ -13,7 +13,8 @@
       "Связаться",
       "Смотреть проект",
       "Открыть сайт проекта",
-      "Оригинальный интерфейс · только просмотр"
+      "Оригинальный интерфейс · только просмотр",
+      "Об авторе"
     ],
     "en": [
       "Projects backed by code",
@@ -28,7 +29,8 @@
       "Get in touch",
       "Explore project",
       "Open project website",
-      "Original UI · view only"
+      "Original UI · view only",
+      "About the author"
     ],
     "zh": [
       "基于真实代码的项目",
@@ -43,7 +45,8 @@
       "联系作者",
       "查看项目",
       "打开项目网站",
-      "原始界面 · 仅供查看"
+      "原始界面 · 仅供查看",
+      "关于作者"
     ],
     "de": [
       "Projekte auf echter Codebasis",
@@ -58,7 +61,8 @@
       "Kontakt",
       "Projekt ansehen",
       "Projekt-Website öffnen",
-      "Originaloberfläche · nur Ansicht"
+      "Originaloberfläche · nur Ansicht",
+      "Über den Autor"
     ],
     "hi": [
       "वास्तविक कोड पर आधारित परियोजनाएँ",
@@ -73,7 +77,8 @@
       "संपर्क",
       "परियोजना देखें",
       "परियोजना वेबसाइट खोलें",
-      "मूल UI · केवल पूर्वावलोकन"
+      "मूल UI · केवल पूर्वावलोकन",
+      "लेखक के बारे में"
     ],
     "fr": [
       "Des projets appuyés sur du vrai code",
@@ -88,7 +93,8 @@
       "Contact",
       "Voir le projet",
       "Ouvrir le site du projet",
-      "Interface d'origine · consultation uniquement"
+      "Interface d'origine · consultation uniquement",
+      "À propos de l’auteur"
     ],
     "fi": [
       "Aitoon koodiin perustuvat projektit",
@@ -103,7 +109,8 @@
       "Yhteystiedot",
       "Tutustu projektiin",
       "Avaa projektisivusto",
-      "Alkuperäinen käyttöliittymä · vain esikatselu"
+      "Alkuperäinen käyttöliittymä · vain esikatselu",
+      "Tietoa tekijästä"
     ],
     "ko": [
       "실제 코드 기반 프로젝트",
@@ -118,7 +125,8 @@
       "연락처",
       "프로젝트 보기",
       "프로젝트 웹사이트",
-      "원본 UI · 보기 전용"
+      "원본 UI · 보기 전용",
+      "개발자 소개"
     ],
     "ja": [
       "実際のコードに基づくプロジェクト",
@@ -133,7 +141,8 @@
       "お問い合わせ",
       "プロジェクトを見る",
       "プロジェクトサイトへ",
-      "実際の UI · 閲覧のみ"
+      "実際の UI · 閲覧のみ",
+      "作者について"
     ],
     "it": [
       "Progetti basati su codice reale",
@@ -148,7 +157,8 @@
       "Contatti",
       "Esplora progetto",
       "Apri il sito del progetto",
-      "Interfaccia originale · solo visualizzazione"
+      "Interfaccia originale · solo visualizzazione",
+      "L’autore"
     ],
     "be": [
       "Праекты на сапраўдным кодзе",
@@ -163,7 +173,8 @@
       "Кантакты",
       "Паглядзець праект",
       "Адкрыць сайт праекта",
-      "Арыгінальны інтэрфейс · толькі прагляд"
+      "Арыгінальны інтэрфейс · толькі прагляд",
+      "Пра аўтара"
     ]
   },
   "projects": {
