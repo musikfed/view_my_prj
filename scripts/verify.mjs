@@ -31,6 +31,9 @@ for(const project of d.projects) {
   } else if (project.image) {
     assert(page.includes('raw.githubusercontent.com/'), 'Expected actual source screenshot '+project.id);
     assert(project.image.includes('musikfed/' + project.id + '/'), 'Image must originate in corresponding public repo '+project.id);
+  } else if(project.id === 'pitools') {
+    assert(page.includes('location.replace') && page.includes('/view_my_prj/pitools/'),
+      'CLI-only PITOOLS must link to its truthful source-derived simulator instead of a fabricated UI');
   } else assert(page.includes('Исходные файлы') || page.includes('SOURCE FILES') || page.includes('Реальный исходный материал'), 'Projects without screenshot cannot invent UI '+project.id);
   assert(tr.projects[project.id], 'Missing translations '+project.id);
   for (const language of supported) assert(tr.projects[project.id][language], 'Missing '+language+' for '+project.id);
