@@ -28,3 +28,39 @@ footer{border-top:1px solid #25333e;margin-top:70px;padding:24px 0 36px;display:
 
 /* Code-only projects have honest links instead of invented dashboard rectangles. */
 .source-section{padding:58px 0 20px;border-top:1px solid #2d4152;margin-top:64px}.source-section>p:not(.eyebrow){max-width:740px}.source-list{margin-top:25px;border-top:1px solid #344657}.source-list>a{display:grid;grid-template-columns:minmax(180px,1fr) minmax(210px,1fr) 25px;gap:15px;padding:18px 8px;border-bottom:1px solid #344657;align-items:center}.source-list>a strong{font-size:17px}.source-list>a span{color:#a7bbc8;font-size:13px}.source-list>a:hover{color:var(--accent)}@media(max-width:600px){.source-list>a{grid-template-columns:1fr 25px}.source-list>a span:nth-child(2){grid-column:1;grid-row:2}.source-list>a span:last-child{grid-row:1;grid-column:2}}
+
+
+/* Product-specific presentation themes: each project retains its original visual identity.
+   The gallery shell is shared, but project previews are sourced from real frontends. */
+.detail-writing{background:#f6f3ed;color:#293843}
+.detail-writing .site-head{background:#fff;border-bottom-color:#e2d8c9}
+.detail-writing .wordmark{color:#765b3c}
+.detail-writing .head-actions a{color:#56636e}
+.detail-writing .page-hero h1,.detail-writing .page-hero h2{font-family:Georgia,"Times New Roman",serif;color:#283744}
+.detail-writing .page-hero p,.detail-writing .detail-section p{color:#5b6871}
+.detail-writing .page-hero .small{color:#7b8a91}
+.detail-writing .project-browser{background:#fff;border-color:#d4c4ad;box-shadow:0 25px 65px #2938431c}
+.detail-writing .source-rule{border-color:#d9cdbd}
+.detail-writing .stack span{color:#6e563b;background:#f5efe6;border-color:#dcccb5}
+.detail-writing .detail-section .image{background:#fff;border-color:#ddd1c3}
+.detail-writing .detail-section h2,.detail-writing #contact h2{color:#293843}
+.detail-writing .contacts a{color:#77583c;background:#fff;border-color:#d7c9b6}
+.detail-writing footer{color:#68757c;border-color:#d9cdbd}
+.detail-music{background:radial-gradient(ellipse at 78% 12%,#3d2e24 0%,#161a20 57%,#0a1016 100%)}
+.detail-music .page-hero h1{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.065em}
+.detail-music .project-browser{border-color:#aa8658;box-shadow:0 22px 82px #e8b9741b}
+.detail-factory{background:linear-gradient(130deg,#111c28,#07111b 65%)}
+.detail-factory .project-browser{border-color:#7d6e5b}
+.detail-arcade{background:radial-gradient(circle at 90% 8%,#173c36,#081016 55%)}
+.detail-arcade .project-browser{border-color:#408c7b;box-shadow:0 10px 72px #42eab216}
+.detail-camera{background:linear-gradient(#0b2430,#081017 78%)}
+.detail-camera .project-browser{border-color:#387e86}
+.detail-storage{background:linear-gradient(135deg,#121a2b,#080e1a 75%)}
+.detail-storage .project-browser{border-color:#547ca2}
+.detail-linux{background:linear-gradient(145deg,#123047,#0b1420 80%)}
+.detail-robot{background:radial-gradient(circle at 65% 5%,#194136,#08161a 61%)}
+.detail-electronics{background:radial-gradient(circle at 87% 9%,#233542,#091217 65%)}
+.detail-infra{background:linear-gradient(145deg,#172531,#09131a 70%)}
+.detail-analytics{background:linear-gradient(145deg,#182c40,#0b1622 70%)}
+.detail-reserved .project-browser{border-style:dashed}
+@media(max-width:980px){.detail-writing{background:#f6f3ed}.detail-writing .page-hero h1,.detail-writing .page-hero p{color:#293843}}
