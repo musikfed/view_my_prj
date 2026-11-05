@@ -36,6 +36,28 @@ for(const project of d.projects) {
   for (const language of supported) assert(tr.projects[project.id][language], 'Missing '+language+' for '+project.id);
   for(const id of forbidden) assert(!page.includes('github.com/musikfed/' + id), 'Private project leak '+project.id);
 }
+const pitoolsSite=read('pitools/index.html');
+const pitoolsDemo=read('pitools/demo.js');
+const pitoolsLegacy=read('projects/pitools/index.html');
+assert(home.includes('href="/view_my_prj/pitools/"'), 'PITOOLS interactive site is not featured on gallery home');
+assert(home.includes('src="/view_my_prj/pitools/flow-cover.svg"'), 'PITOOLS flow art missing on gallery home');
+assert(pitoolsSite.includes('rel="canonical" href="https://musikfed.github.io/view_my_prj/pitools/"'),
+  'Dedicated PITOOLS canonical route missing');
+for(const text of ['2026610793','15.01.2026','/tmp/test_test','test_test.txt','asyncio.gather','SHA-256','AutoAddPolicy','feudor.lab@yandex.ru']) {
+  assert(pitoolsSite.includes(text),'PITOOLS source or registration detail missing: '+text);
+}
+for(const asset of ['pitools/demo.css','pitools/demo.js','pitools/flow-cover.svg']) {
+  assert(fs.existsSync(new URL(asset,root)), 'PITOOLS asset missing: '+asset);
+}
+assert(!(/\b(?:fetch|WebSocket|XMLHttpRequest|EventSource)\s*\(/.test(pitoolsDemo)),
+  'PITOOLS simulation may not make network or API requests');
+assert(pitoolsDemo.includes('test.server.ru') && pitoolsDemo.includes('node-a.example'),
+  'Both uploaded and illustrative PITOOLS scenarios must exist');
+assert(pitoolsDemo.includes('state.step>=6'), 'Simulated first-host checksum warning must be visible');
+assert(pitoolsLegacy.includes('location.replace') && pitoolsLegacy.includes('/view_my_prj/pitools/'),
+  'Old PITOOLS project card must preserve navigable redirect to standalone site');
+assert(read('sitemap.xml').includes('https://musikfed.github.io/view_my_prj/pitools/'),
+  'Sitemap must index new PITOOLS canonical page');
 assert(read('sitemap.xml').includes('https://musikfed.github.io/view_my_prj/'), 'Missing sitemap');
 assert(fs.existsSync(new URL('previews/yadrokreator/app.css',root)), 'Factory preview original CSS missing');
 // Every internal link and image must resolve inside the generated GitHub Pages tree.
@@ -79,6 +101,6 @@ assert(read('sitemap.xml').match(/<url>/g)?.length===21,
 const previews = d.projects.filter(p=>p.preview).length;
 const realVisuals = d.projects.filter(p=>p.preview || p.image).length;
 console.log('Verified '+d.projects.length+' independent project pages, '+previews+
-  ' native safe HTML previews, '+realVisuals+' real visual presentations, 11 languages, '+
+  ' native safe HTML previews, '+realVisuals+' real visual presentations + PITOOLS SSH source simulation, 11 languages, '+
   checkedLocalLinks+' local links, sitemap and private repository isolation.');
 
