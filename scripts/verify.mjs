@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const root = new URL('../docs/', import.meta.url);
 const read = p => fs.readFileSync(new URL(p, root), 'utf8');
@@ -37,4 +38,45 @@ for(const project of d.projects) {
 }
 assert(read('sitemap.xml').includes('https://musikfed.github.io/view_my_prj/'), 'Missing sitemap');
 assert(fs.existsSync(new URL('previews/yadrokreator/app.css',root)), 'Factory preview original CSS missing');
-console.log('Verified 20 separate pages, three native HTML/CSS previews, 11 descriptions and no private project leakage.');
+// Every internal link and image must resolve inside the generated GitHub Pages tree.
+// Run this on every push, rather than discovering broken project links after publishing.
+const docsDir = path.resolve(fileURLToPath(root));
+const publishedFiles = [];
+function collectHtml(directory) {
+  for (const entry of fs.readdirSync(directory, {withFileTypes:true})) {
+    const target = path.join(directory,entry.name);
+    if(entry.isDirectory()) collectHtml(target);
+    else if(entry.isFile() && entry.name.endsWith('.html')) publishedFiles.push(target);
+  }
+}
+collectHtml(docsDir);
+const siteBase = 'https://musikfed.github.io/view_my_prj/';
+let checkedLocalLinks = 0;
+for (const htmlFile of publishedFiles) {
+  const source = fs.readFileSync(htmlFile,'utf8');
+  const relativeHtml = path.relative(docsDir,htmlFile).split(path.sep).join('/');
+  const siteUrl = new URL(relativeHtml,siteBase);
+  for (const match of source.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
+    const ref = match[1];
+    if (!ref || ref.startsWith('#')) continue;
+    const url = new URL(ref,siteUrl);
+    if (url.origin !== siteUrl.origin) continue;
+    assert(url.pathname.startsWith('/view_my_prj/'), 'Public gallery link leaves its Pages base: '+relativeHtml+' -> '+ref);
+    const urlPath = decodeURIComponent(url.pathname.slice('/view_my_prj/'.length));
+    let target = path.resolve(docsDir,urlPath);
+    if (url.pathname.endsWith('/')) target=path.join(target,'index.html');
+    assert(target.startsWith(docsDir+path.sep), 'Invalid project link path: '+ref);
+    assert(fs.existsSync(target) && fs.statSync(target).isFile(),
+      'Broken project link: '+relativeHtml+' -> '+ref+' (expected '+target+')');
+    checkedLocalLinks++;
+  }
+}
+assert(publishedFiles.length>=26, 'All project and read-only preview HTML pages must exist');
+assert(read('sitemap.xml').match(/<url>/g)?.length===21,
+  'Search sitemap must include the homepage and all twenty public projects');
+const previews = d.projects.filter(p=>p.preview).length;
+const realVisuals = d.projects.filter(p=>p.preview || p.image).length;
+console.log('Verified '+d.projects.length+' independent project pages, '+previews+
+  ' native safe HTML previews, '+realVisuals+' real visual presentations, 11 languages, '+
+  checkedLocalLinks+' local links, sitemap and private repository isolation.');
+
