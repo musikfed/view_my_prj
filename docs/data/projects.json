@@ -142,8 +142,9 @@
         "Python",
         "Windows"
       ],
-      "source": "frontend/src/App.jsx",
-      "status": "Локальная мастерская администратора"
+      "source": "frontend/src/App.jsx → Vite build → real Chromium screenshot (GitHub Actions)",
+      "status": "Настоящий React-фронтенд собран в CI; без локального backend",
+      "image": "https://raw.githubusercontent.com/musikfed/diskshellhdd/main/docs/screenshots/frontend-code-preview.png"
     },
     {
       "id": "registry-change-explorer",
