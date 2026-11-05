@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "publishedOnly": true,
+  "updated": "2026-11-05",
+  "contact": {
+    "telegram": "https://t.me/Feudorlab1",
+    "phone": "+7 926 041 1145",
+    "emails": [
+      "feudor.lab@yandex.ru",
+      "obzorniky@gmail.com"
+    ],
+    "website": "https://peginelab.ru/"
+  },
+  "projects": [
+    {
+      "id": "achewiw",
+      "title": "ACHEWIW",
+      "eyebrow": "LOCAL PUBLISHING · STORY ENGINE",
+      "kind": "writing",
+      "accent": "#a57849",
+      "light": true,
+      "tagline": "Типография в кармане",
+      "description": "Закулисная мастерская рассказов, книг и выступлений. Идея, канон, многомодельная редактура, иллюстрации и PDF/DOCX/EPUB.",
+      "image": "https://raw.githubusercontent.com/musikfed/achewiw/main/docs/media/achewiw-home.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/achewiw/main/docs/media/achewiw-editor-demo.svg",
+      "site": "https://musikfed.github.io/achewiw/",
+      "stack": [
+        "FastAPI",
+        "Ollama",
+        "SQLite",
+        "ComfyUI"
+      ],
+      "source": "docs/media/achewiw-home.svg",
+      "status": "Авторская студия, активная разработка"
+    },
+    {
+      "id": "muzikfed",
+      "title": "Pocket Orchestra",
+      "eyebrow": "ALGORITHMIC MUSIC · MIDI · MUSICXML",
+      "kind": "music",
+      "accent": "#d6a568",
+      "tagline": "Музыкальная мастерская",
+      "description": "Оригинальная веб-студия алгоритмической композиции для оркестра и SATB. Нотный результат можно сохранять и редактировать.",
+      "preview": "pocket-orchestra",
+      "stack": [
+        "Python",
+        "MusicXML",
+        "MIDI",
+        "Ollama"
+      ],
+      "source": "web/index.html",
+      "status": "Рабочий экспериментальный прототип"
+    },
+    {
+      "id": "YadroKreator",
+      "title": "YadroKreator",
+      "eyebrow": "FIRMWARE FACTORY · CORE INFRASTRUCTURE",
+      "kind": "factory",
+      "accent": "#cb9967",
+      "tagline": "Фабрика прошивок и ядер",
+      "description": "Панель сборки Linux-образов и прошивок: отдельные линии WIFICAM, Irila и WifCam Helper, статусы и проверяемые артефакты.",
+      "preview": "yadrokreator",
+      "image": "https://raw.githubusercontent.com/musikfed/YadroKreator/main/docs/screenshots/build-success-2026-11-02.svg",
+      "stack": [
+        "Flask",
+        "Python",
+        "Buildroot",
+        "Linux"
+      ],
+      "source": "templates/index.html + static/app.css",
+      "status": "Панель локальной инфраструктуры"
+    },
+    {
+      "id": "smilegun_v2",
+      "title": "SMILE·GUN v2",
+      "eyebrow": "COMPUTER VISION · WEBCAM ARCADE",
+      "kind": "arcade",
+      "accent": "#55ff8a",
+      "tagline": "Управляй игрой без джойстика",
+      "description": "Настоящий интерфейс браузерной игры: мимика, движения рук, камера, распознавание жестов и четыре уровня.",
+      "image": "https://raw.githubusercontent.com/musikfed/smilegun_v2/main/docs/screenshots/menu-ru.jpg",
+      "image2": "https://raw.githubusercontent.com/musikfed/smilegun_v2/main/docs/screenshots/level-2-galaxy.jpg",
+      "preview": "smilegun-v2",
+      "stack": [
+        "Flask",
+        "OpenCV",
+        "MediaPipe",
+        "Canvas"
+      ],
+      "source": "templates/index.html",
+      "status": "Экспериментальная игра"
+    },
+    {
+      "id": "smilegun",
+      "title": "SmileGun",
+      "eyebrow": "GESTURE CONTROLS · EXPERIMENTAL GAME",
+      "kind": "arcade",
+      "accent": "#5ae0fb",
+      "tagline": "Камера вместо контроллера",
+      "description": "Предшественник SMILE·GUN: управление жестами, зрение и браузерный игровой интерфейс.",
+      "image": "https://raw.githubusercontent.com/musikfed/smilegun/my-game/docs/screenshots/menu-preview.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/smilegun/my-game/docs/screenshots/game-preview.svg",
+      "stack": [
+        "Computer Vision",
+        "Browser",
+        "Python"
+      ],
+      "source": "docs/screenshots/menu-preview.svg",
+      "status": "Исследовательский прототип",
+      "branch": "my-game"
+    },
+    {
+      "id": "Hombo3_3.0.0",
+      "title": "Hombo3 Control Center",
+      "eyebrow": "ESP32-S3 · ROBOTICS · PTZ · VOICE",
+      "kind": "robot",
+      "accent": "#6fdac4",
+      "tagline": "Управление настоящим роботом",
+      "description": "Панель управления домашним роботом ESP32-S3 с телеметрией, камерой, дальномерами, голосом и OTA.",
+      "image": "https://raw.githubusercontent.com/musikfed/Hombo3_3.0.0/main/webui%20%281%29.png",
+      "image2": "https://raw.githubusercontent.com/musikfed/Hombo3_3.0.0/main/webui%20%282%29.png",
+      "stack": [
+        "ESP32-S3",
+        "React",
+        "FastAPI",
+        "OTA"
+      ],
+      "source": "webui (1).png · frontend/src",
+      "status": "Робототехнический проект"
+    },
+    {
+      "id": "diskshellhdd",
+      "title": "DiskShell HDD",
+      "eyebrow": "WINDOWS STORAGE · SYSTEM UTILITY",
+      "kind": "storage",
+      "accent": "#77a4f2",
+      "tagline": "Управление накопителями Windows",
+      "description": "Диски, разделы, файлы, StreamCopy, анализ размещения, восстановление и диагностика. Реальный интерфейс основан на React.",
+      "stack": [
+        "React",
+        "Vite",
+        "Python",
+        "Windows"
+      ],
+      "source": "frontend/src/App.jsx",
+      "status": "Локальная мастерская администратора"
+    },
+    {
+      "id": "registry-change-explorer",
+      "title": "Registry Change Explorer",
+      "eyebrow": "WINDOWS REGISTRY · SQLITE",
+      "kind": "storage",
+      "accent": "#8bbde3",
+      "tagline": "Исследовать изменения реестра",
+      "description": "Быстрый поиск по реестру Windows с локальным индексом SQLite и двухпанельным интерфейсом.",
+      "image": "https://raw.githubusercontent.com/musikfed/registry-change-explorer/main/docs/screenshots/main-preview.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/registry-change-explorer/main/docs/screenshots/search-preview.svg",
+      "stack": [
+        "Windows",
+        "SQLite",
+        "Python"
+      ],
+      "source": "docs/screenshots/main-preview.svg",
+      "status": "Прототип чтения реестра"
+    },
+    {
+      "id": "myipcam",
+      "title": "MyIPCam OS",
+      "eyebrow": "INGENIC T23 · CAMERA FIRMWARE",
+      "kind": "camera",
+      "accent": "#64c3b5",
+      "tagline": "Своя ОС для IP-камеры",
+      "description": "Экспериментальная камера на Ingenic T23N, SD-загрузка и локальная панель Wi-Fi и управления.",
+      "image": "https://raw.githubusercontent.com/musikfed/myipcam/main/docs/screenshots/dashboard-wifi.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/myipcam/main/docs/screenshots/setup-login.svg",
+      "stack": [
+        "Linux",
+        "Ingenic",
+        "PTZ",
+        "microSD"
+      ],
+      "source": "docs/screenshots/dashboard-wifi.svg",
+      "status": "Аппаратные испытания"
+    },
+    {
+      "id": "wificam_T23N",
+      "title": "WIFICAM T23N",
+      "eyebrow": "CAMERA · FIRMWARE · SD BOOT",
+      "kind": "camera",
+      "accent": "#57bca4",
+      "tagline": "Прошивка автономной Wi-Fi-камеры",
+      "description": "SD-загрузка Linux, Wi-Fi, PTZ, streaming и сервисы камеры. Финальная версия требует проверки на железе.",
+      "image": "https://raw.githubusercontent.com/musikfed/wificam_T23N/main/docs/screenshots/dashboard.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/wificam_T23N/main/docs/screenshots/services.svg",
+      "stack": [
+        "Linux",
+        "BusyBox",
+        "PTZ",
+        "RTSP"
+      ],
+      "source": "docs/screenshots/dashboard.svg",
+      "status": "Проверенный SD-базис; новые сборки на испытаниях"
+    },
+    {
+      "id": "wifcam_helper",
+      "title": "WifCam Helper",
+      "eyebrow": "CAMERA AS ROBOT HEAD · TEST BENCH",
+      "kind": "camera",
+      "accent": "#66cdb5",
+      "tagline": "Камера как голова помощника",
+      "description": "Отдельные прошивка и стенд для микрофона, динамика, PTZ и низкой задержки T23N.",
+      "stack": [
+        "Ingenic T23N",
+        "Audio",
+        "Video",
+        "Firmware"
+      ],
+      "source": "firmware + README",
+      "status": "Испытательный стенд"
+    },
+    {
+      "id": "micro",
+      "title": "MICRO",
+      "eyebrow": "LOCAL VOICE ASSISTANT",
+      "kind": "robot",
+      "accent": "#c4a3e6",
+      "tagline": "Локальный голосовой помощник",
+      "description": "Разработка голосового помощника для локального микрофона и динамика с русскими STT/TTS.",
+      "stack": [
+        "FastAPI",
+        "STT",
+        "TTS",
+        "Ollama"
+      ],
+      "source": "README.md",
+      "status": "Разработка, активная интеграционная ветка"
+    },
+    {
+      "id": "Irila_baikal_v1.0",
+      "title": "Ирина Байкал 1.0",
+      "eyebrow": "EXPERIMENTAL LINUX · SECURE BOOT",
+      "kind": "linux",
+      "accent": "#80c7d8",
+      "tagline": "Своя операционная система",
+      "description": "Экспериментальная Linux-система. Реальный первый запуск на Acer Swift 3 подтверждён испытаниями; совместимость оборудования в проверке.",
+      "stack": [
+        "Ubuntu",
+        "UEFI",
+        "Secure Boot",
+        "XFCE"
+      ],
+      "source": "docs/first_boot/README.md",
+      "status": "Первый запуск подтверждён"
+    },
+    {
+      "id": "esp32s3devkitC-1N16R8",
+      "title": "ESP32 MultiBoard Studio",
+      "eyebrow": "ELECTRONICS · MICROPYTHON · ESP32",
+      "kind": "electronics",
+      "accent": "#f0b367",
+      "tagline": "Студия микроконтроллеров",
+      "description": "Программирование и диагностика ESP32-C3/S3 с React, FastAPI и MicroPython.",
+      "image": "https://raw.githubusercontent.com/musikfed/esp32s3devkitC-1N16R8/main/docs/screenshots/studio-preview.svg",
+      "stack": [
+        "ESP32",
+        "MicroPython",
+        "React",
+        "FastAPI"
+      ],
+      "source": "docs/screenshots/studio-preview.svg",
+      "status": "Разработка аппаратной студии"
+    },
+    {
+      "id": "pgsql",
+      "title": "PostgreSQL 16 Lab",
+      "eyebrow": "POSTGRESQL · 1C · HIGH AVAILABILITY",
+      "kind": "infra",
+      "accent": "#79b7de",
+      "tagline": "Лаборатория отказоустойчивости",
+      "description": "PostgreSQL 16 на Ubuntu: 1С, Patroni/etcd, Kubernetes и тестовые конфигурации HA.",
+      "stack": [
+        "PostgreSQL",
+        "Patroni",
+        "etcd",
+        "Kubernetes"
+      ],
+      "source": "README.md",
+      "status": "Лаборатория, не production-ready"
+    },
+    {
+      "id": "postgresql1c",
+      "title": "PostgresPro + 1C",
+      "eyebrow": "CONTAINERIZED DATABASE · 1C",
+      "kind": "infra",
+      "accent": "#8eb9d8",
+      "tagline": "Сборка PostgreSQL для 1С",
+      "description": "Docker-репозиторий на базе стороннего проекта; оригинальное авторство и лицензирование указаны в README.",
+      "stack": [
+        "Docker",
+        "PostgreSQL",
+        "1C"
+      ],
+      "source": "readme.md",
+      "status": "Основан на коде другого автора"
+    },
+    {
+      "id": "pitools",
+      "title": "PITOOLS",
+      "eyebrow": "SSH · PARALLEL DEPLOYMENT",
+      "kind": "infra",
+      "accent": "#ceb087",
+      "tagline": "Параллельная доставка файлов",
+      "description": "Авторская программа для параллельной раскладки файлов на SSH-серверы по .prj-манифестам.",
+      "stack": [
+        "Python",
+        "SSH",
+        ".prj",
+        "Linux"
+      ],
+      "source": "README.md",
+      "status": "Зарегистрированная программа для ЭВМ",
+      "branch": "pitools"
+    },
+    {
+      "id": "analitikhhru",
+      "title": "HH Analytics",
+      "eyebrow": "LABOR MARKET · LOCAL ANALYTICS",
+      "kind": "analytics",
+      "accent": "#87b5e4",
+      "tagline": "Аналитика вакансий и резюме",
+      "description": "Локальная панель агрегированных данных HH.ru, работающая через браузер пользователя.",
+      "image": "https://raw.githubusercontent.com/musikfed/analitikhhru/main/docs/screenshots/dashboard-preview.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/analitikhhru/main/docs/screenshots/connection-preview.svg",
+      "stack": [
+        "Python",
+        "Browser",
+        "Analytics"
+      ],
+      "source": "docs/screenshots/dashboard-preview.svg",
+      "status": "Экспериментальный локальный инструмент"
+    },
+    {
+      "id": "docker-compose-ui",
+      "title": "Docker Compose UI",
+      "eyebrow": "UPSTREAM FORK · CONTAINERS",
+      "kind": "infra",
+      "accent": "#7ab5cf",
+      "tagline": "Веб-интерфейс Docker Compose",
+      "description": "Форк проекта другого автора, не самостоятельная оригинальная разработка.",
+      "stack": [
+        "Docker",
+        "Compose",
+        "Web UI"
+      ],
+      "source": "Upstream README",
+      "status": "Форк стороннего проекта",
+      "branch": "master"
+    },
+    {
+      "id": "ai_video3060_12G",
+      "title": "AI Video RTX 3060",
+      "eyebrow": "RESERVED REPOSITORY",
+      "kind": "reserved",
+      "accent": "#8e8b9b",
+      "tagline": "Проект в подготовке",
+      "description": "В репозитории пока нет подтверждённого видеогенератора. Здесь не публикуются выдуманные демонстрации.",
+      "stack": [
+        "RTX 3060",
+        "Planning"
+      ],
+      "source": "README.md",
+      "status": "Заготовка, без готового движка"
+    }
+  ]
+}
