@@ -16,6 +16,8 @@ assert(Object.keys(tr.ui).join('|') === supported.join('|'), 'Eleven locales req
 assert(fs.existsSync(new URL('index.html',root)), 'Missing gallery homepage');
 const home = read('index.html');
 assert(home.includes('REAL SOURCE REFERENCES') || home.includes('LIVE SOURCE REFERENCES'), 'Main site should describe authentic source visuals');
+assert(home.includes('data-personal-site') && home.includes('https://musikfed.github.io/my_self/#ru'), 'Author site link missing');
+for (const language of supported) assert(typeof tr.ui[language][13] === 'string' && tr.ui[language][13], 'Missing author-link translation '+language);
 for(const id of forbidden) assert(!home.includes(id), 'Private project leaked to homepage: ' + id);
 for(const project of d.projects) {
   const page = read('projects/' + project.id + '/index.html');
@@ -103,7 +105,7 @@ for (const htmlFile of publishedFiles) {
     const url = new URL(ref,siteUrl);
     if (url.origin !== siteUrl.origin) continue;
     // Other independent GitHub Pages projects share this domain, not this /docs tree.
-    if (['/achewiw/', '/registry-change-explorer/', '/esp32s3devkitC-1N16R8/', '/analitikhhru/'].some(prefix => url.pathname.startsWith(prefix))) continue;
+    if (['/achewiw/', '/registry-change-explorer/', '/esp32s3devkitC-1N16R8/', '/analitikhhru/', '/my_self/'].some(prefix => url.pathname.startsWith(prefix))) continue;
     assert(url.pathname.startsWith('/view_my_prj/'), 'Public gallery link leaves its Pages base: '+relativeHtml+' -> '+ref);
     const urlPath = decodeURIComponent(url.pathname.slice('/view_my_prj/'.length));
     let target = path.resolve(docsDir,urlPath);
