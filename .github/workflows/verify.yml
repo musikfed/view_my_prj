@@ -17,4 +17,5 @@ jobs:
       - name: Validate native HTML/CSS previews and public-only repository pages
         run: |
           node --check docs/assets/site.js
+          node --check docs/pitools/demo.js
           node scripts/verify.mjs
