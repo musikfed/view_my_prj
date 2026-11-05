@@ -25,3 +25,6 @@ footer{border-top:1px solid #25333e;margin-top:70px;padding:24px 0 36px;display:
 .tile .shot iframe{display:block;width:1440px;height:900px;transform:scale(.31);transform-origin:top left;border:0;pointer-events:none;background:#121d2b}
 @media(max-width:800px){.tile .shot iframe{transform:scale(.36)}}
 @media(max-width:600px){.tile .shot iframe{transform:scale(.27)}}
+
+/* Code-only projects have honest links instead of invented dashboard rectangles. */
+.source-section{padding:58px 0 20px;border-top:1px solid #2d4152;margin-top:64px}.source-section>p:not(.eyebrow){max-width:740px}.source-list{margin-top:25px;border-top:1px solid #344657}.source-list>a{display:grid;grid-template-columns:minmax(180px,1fr) minmax(210px,1fr) 25px;gap:15px;padding:18px 8px;border-bottom:1px solid #344657;align-items:center}.source-list>a strong{font-size:17px}.source-list>a span{color:#a7bbc8;font-size:13px}.source-list>a:hover{color:var(--accent)}@media(max-width:600px){.source-list>a{grid-template-columns:1fr 25px}.source-list>a span:nth-child(2){grid-column:1;grid-row:2}.source-list>a span:last-child{grid-row:1;grid-column:2}}
