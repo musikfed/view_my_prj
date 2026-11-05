@@ -356,16 +356,16 @@
       "kind": "analytics",
       "accent": "#87b5e4",
       "tagline": "Аналитика вакансий и резюме",
-      "description": "Локальная панель агрегированных данных HH.ru, работающая через браузер пользователя.",
-      "image": "https://raw.githubusercontent.com/musikfed/analitikhhru/main/docs/screenshots/dashboard-preview.svg",
-      "image2": "https://raw.githubusercontent.com/musikfed/analitikhhru/main/docs/screenshots/connection-preview.svg",
+      "description": "Локальная аналитика HH Market Radar: вакансии, резюме, STOCK/FLOW, сценарная HR-нагрузка и история. Архивная публичная демонстрация.",
+      "image": "https://raw.githubusercontent.com/musikfed/analitikhhru/main/docs/screenshots/market-radar-archive.svg",
+      "image2": "https://raw.githubusercontent.com/musikfed/analitikhhru/main/docs/screenshots/pulse-market-archive.svg",
       "stack": [
         "Python",
         "Browser",
         "Analytics"
       ],
-      "source": "docs/screenshots/dashboard-preview.svg",
-      "status": "Экспериментальный локальный инструмент",
+      "source": "templates/index.html + static/app.css + docs/screenshots/market-radar-archive.svg",
+      "status": "Публичная read-only демонстрация, локальная программа отдельно",
       "created_at": "2026-08-31T15:38:23Z"
     },
     {

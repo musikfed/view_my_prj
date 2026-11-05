@@ -52,6 +52,9 @@ for (const project of d.projects) {
   assert(home.includes('data-project-id="'+project.id+'"'), 'Missing chronological card for '+project.id);
 }
 assert(fs.existsSync(new URL('assets/peginelab-mark.svg',root)), 'PL vector brand mark missing');
+const hhPage=read('projects/analitikhhru/index.html');
+assert(hhPage.includes('sandbox="allow-scripts"') && hhPage.includes('https://musikfed.github.io/analitikhhru/'), 'Original HH demo iframe missing');
+assert(home.includes('market-radar-archive.svg') && hhPage.includes('pulse-market-archive.svg'), 'New Market Radar previews missing');
 const pitoolsSite=read('pitools/index.html');
 const pitoolsDemo=read('pitools/demo.js');
 const pitoolsLegacy=read('projects/pitools/index.html');
@@ -100,7 +103,7 @@ for (const htmlFile of publishedFiles) {
     const url = new URL(ref,siteUrl);
     if (url.origin !== siteUrl.origin) continue;
     // Other independent GitHub Pages projects share this domain, not this /docs tree.
-    if (['/achewiw/', '/registry-change-explorer/', '/esp32s3devkitC-1N16R8/'].some(prefix => url.pathname.startsWith(prefix))) continue;
+    if (['/achewiw/', '/registry-change-explorer/', '/esp32s3devkitC-1N16R8/', '/analitikhhru/'].some(prefix => url.pathname.startsWith(prefix))) continue;
     assert(url.pathname.startsWith('/view_my_prj/'), 'Public gallery link leaves its Pages base: '+relativeHtml+' -> '+ref);
     const urlPath = decodeURIComponent(url.pathname.slice('/view_my_prj/'.length));
     let target = path.resolve(docsDir,urlPath);

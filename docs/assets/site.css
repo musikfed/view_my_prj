@@ -100,3 +100,13 @@ footer{border-top:1px solid #25333e;margin-top:70px;padding:24px 0 36px;display:
 @media(max-width:700px){.catalog-controls{justify-content:flex-start;width:100%}.wordmark::before{width:36px;height:36px;flex-basis:36px}.wordmark{font-size:19px}}
 
 .project-gallery>.tile[hidden]{display:none!important}
+
+/* Dedicated analytics presentation using genuine Market Radar UI source and archived figures. */
+.detail-analytics{background:radial-gradient(circle at 90% 4%,#0a333b,#08121f 61%)}
+.detail-analytics .project-browser{border-color:#287c89;box-shadow:0 25px 65px #00d9cf13}
+.detail-analytics .native-showcase .native-frame-wrap{border-color:#218b95;background:#081622}
+.detail-analytics .native-showcase iframe{height:940px}
+.detail-analytics .hh-detail .image{background:#091625;border-color:#346374}
+.detail-analytics .hh-detail .image img{object-fit:contain}
+@media(max-width:900px){.detail-analytics .native-showcase iframe{height:760px}}
+@media(max-width:600px){.detail-analytics .native-showcase iframe{height:580px}}
