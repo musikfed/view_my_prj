@@ -209,15 +209,16 @@
       "kind": "camera",
       "accent": "#66cdb5",
       "tagline": "Камера как голова помощника",
-      "description": "Отдельные прошивка и стенд для микрофона, динамика, PTZ и низкой задержки T23N.",
+      "description": "Оригинальный интерфейс испытательного стенда WifCam Helper: камера T23N, RTSP, звук, профили и отчёты. Статическая копия без реального подключения.",
       "stack": [
         "Ingenic T23N",
         "Audio",
         "Video",
         "Firmware"
       ],
-      "source": "firmware + README",
-      "status": "Испытательный стенд"
+      "source": "wifcam_helper/ui.html",
+      "status": "Испытательный стенд",
+      "preview": "wifcam-helper"
     },
     {
       "id": "micro",
