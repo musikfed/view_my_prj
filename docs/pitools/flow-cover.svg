@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-label="PITOOLS: .prj parser, asyncio.gather fan-out to three SSH/SFTP servers and verification of first host only">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#112f41"/><stop offset="1" stop-color="#071723"/></linearGradient><linearGradient id="gold" x2="1"><stop stop-color="#dfae78"/><stop offset="1" stop-color="#f4d6a4"/></linearGradient><filter id="soft"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<rect width="1200" height="730" fill="url(#bg)"/><g stroke="#345362" opacity=".5"><path d="M0 85H1200M0 665H1200"/><path d="M75 0V730M1125 0V730"/></g>
+<text x="78" y="54" fill="#d6bb90" font-family="Arial,sans-serif" font-size="19" letter-spacing="5">PITOOLS / PARALLEL DEPLOYMENT</text>
+<text x="78" y="112" fill="#eff7f8" font-family="Arial,sans-serif" font-size="37" font-weight="bold">ONE MANIFEST.</text>
+<text x="78" y="154" fill="#f1cc94" font-family="Arial,sans-serif" font-size="37" font-weight="bold">MULTIPLE TARGETS.</text>
+<text x="79" y="191" fill="#a9bdc9" font-family="Consolas,monospace" font-size="17">Python · Paramiko · asyncio.gather · SHA-256</text>
+<!-- source -->
+<rect x="78" y="252" width="247" height="252" rx="18" fill="#091d2b" stroke="#648899" stroke-width="2"/>
+<rect x="78" y="252" width="247" height="51" rx="18" fill="#234051"/><rect x="78" y="284" width="247" height="20" fill="#234051"/>
+<text x="99" y="285" fill="#f2d1a1" font-size="18" font-family="Consolas,monospace">pitools.prj</text>
+<text x="100" y="352" fill="#79c9df" font-size="20" font-family="Consolas,monospace">MLT:</text><text x="167" y="352" fill="#d9e7eb" font-size="19" font-family="Consolas,monospace">hosts…</text>
+<text x="100" y="399" fill="#79c9df" font-size="20" font-family="Consolas,monospace">PRJ:</text><text x="167" y="399" fill="#d9e7eb" font-size="19" font-family="Consolas,monospace">/tmp/test</text>
+<text x="100" y="446" fill="#79c9df" font-size="20" font-family="Consolas,monospace">FL:</text><text x="167" y="446" fill="#d9e7eb" font-size="19" font-family="Consolas,monospace">test.txt</text>
+<text x="100" y="481" fill="#829baa" font-size="14" font-family="Arial,sans-serif">configuration input</text>
+<!-- dynamic pipelines -->
+<path d="M326 379H420" stroke="#8cd9e0" stroke-width="5" fill="none"/><path d="M408 367l15 12-15 12" stroke="#8cd9e0" stroke-width="4" fill="none"/>
+<rect x="427" y="303" width="237" height="154" rx="19" fill="#173747" stroke="#e4bd87" stroke-width="3"/>
+<text x="545" y="348" text-anchor="middle" font-family="Consolas,monospace" font-size="18" fill="#f7d6a6">parse_prj()</text>
+<text x="545" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#ffffff">asyncio.gather()</text>
+<text x="545" y="415" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#b8d0da">parallel per-file tasks</text>
+<circle cx="700" cy="380" r="9" fill="#f2ca96"/>
+<path d="M665 380H700M700 380H722V263H768M700 380H768M700 380H722V496H768" stroke="#80c7d5" stroke-width="4" fill="none" stroke-linejoin="round"/>
+<circle cx="720" cy="263" r="5" fill="#92e0e8"/><circle cx="720" cy="496" r="5" fill="#92e0e8"/>
+<!-- ssh host cards -->
+<g font-family="Arial,sans-serif">
+<rect x="776" y="210" width="344" height="108" rx="17" fill="#183e4a" stroke="#83e1bd" stroke-width="3"/>
+<circle cx="810" cy="242" r="11" fill="#8ee0bd"/><text x="836" y="249" fill="#f6f9fa" font-size="21" font-weight="bold">SSH / SFTP 01</text>
+<text x="806" y="288" fill="#b7d5d9" font-size="18">upload → SHA attempt</text>
+<rect x="776" y="330" width="344" height="108" rx="17" fill="#163440" stroke="#70aab9" stroke-width="2"/>
+<circle cx="810" cy="362" r="11" fill="#83c6cf"/><text x="836" y="369" fill="#f6f9fa" font-size="21" font-weight="bold">SSH / SFTP 02</text>
+<text x="806" y="408" fill="#b7d5d9" font-size="18">upload → no SHA call</text>
+<rect x="776" y="449" width="344" height="108" rx="17" fill="#163440" stroke="#70aab9" stroke-width="2"/>
+<circle cx="810" cy="482" r="11" fill="#83c6cf"/><text x="836" y="489" fill="#f6f9fa" font-size="21" font-weight="bold">SSH / SFTP 03</text>
+<text x="806" y="529" fill="#b7d5d9" font-size="18">upload → no SHA call</text>
+</g>
+<path d="M1120 263H1149V580H939" stroke="#eeb98b" stroke-width="3" fill="none" stroke-dasharray="10 9"/>
+<rect x="765" y="587" width="363" height="52" rx="11" fill="#3a2c27" stroke="#bd8865"/>
+<text x="946" y="619" text-anchor="middle" fill="#f7d8b5" font-size="18" font-family="Arial,sans-serif">CHECKSUM PATH ≠ UPLOAD PATH</text>
+<text x="78" y="633" fill="#e8d7b4" font-size="20" font-family="Arial,sans-serif">Simulation of source code logic</text>
+<text x="78" y="665" fill="#b4c8d0" font-size="15" font-family="Arial,sans-serif">No SSH connections • no passwords or keys • no real uploads</text>
+<text x="1121" y="690" text-anchor="end" fill="#d7b585" font-size="16" font-family="Consolas,monospace">Peginelab / 2026</text>
+</svg>
