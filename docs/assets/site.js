@@ -38,6 +38,10 @@
   const selected = params.get("lang");
   const lang = supported.includes(selected) ? selected : "ru";
   document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
+  // Personal CV uses hash-based locales rather than ?lang= like this gallery.
+  document.querySelectorAll("a[data-personal-site]").forEach(a => {
+    a.href = "https://musikfed.github.io/my_self/#" + lang;
+  });
 
   function updateLink(a) {
     const raw = a.getAttribute("href");
