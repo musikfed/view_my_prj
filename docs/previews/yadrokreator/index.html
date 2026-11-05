@@ -121,7 +121,7 @@
         <details class="factory-guide"><summary>Как записать и проверить SD-образ</summary>        <div class="surface sd-export-guide">
           <div class="surface-head"><div><small>SD CARD EXPORT / T23N</small><h3>Скачать и записать SD-образ</h3></div></div>
           <p>После завершения сборки нажми <strong>«Скачать образ .img»</strong> на карточке нужного файла. <strong>Никакого одноразового кода, ID или терминала:</strong> панель сама выберет образ и сверит SHA256, MBR, MSPL LBA34, FAT16/uImage и ext4 перед передачей. <strong>Сборка ядра не повторяется.</strong> Кнопка «Проверить SD» остаётся для просмотра схемы.</p>
-          <p><strong>Доступ:</strong> скачивание приватных образов разрешено только клиентам доверенной локальной сети Huananzhi (по умолчанию <code>192.168.0.0/24</code> и loopback). Панель всё ещё без входа: любой, кто попал в разрешённую сеть, может скачать образ с персональными Wi-Fi настройками. Не открывай порт 62404 в интернет; для удалённого доступа используй защищённый VPN или SSH.</p>
+          <p><strong>Доступ:</strong> скачивание приватных образов разрешено только клиентам доверенной локальной сети Huananzhi (по умолчанию <code>внутренняя LAN</code> и loopback). Панель всё ещё без входа: любой, кто попал в разрешённую сеть, может скачать образ с персональными Wi-Fi настройками. Не открывай порт 62404 в интернет; для удалённого доступа используй защищённый VPN или SSH.</p>
           <p>В Windows открываем скачанный <code>.img</code> в Rufus или balenaEtcher, выбираем именно SD через кардридер и запускаем запись. Предварительное форматирование не нужно. <strong>Файл является образом целого диска: MSPL уже расположен на LBA34, повторный seek=34 запрещён.</strong></p>
           <p>После записи — безопасное извлечение и проверка загрузки на T23N. Не форматируй предложенный Windows раздел ext4.</p>
           <p><a href="https://github.com/musikfed/YadroKreator/blob/main/docs/SD_DOWNLOAD_RU.md" target="_blank" rel="noopener noreferrer">Подробная инструкция: скачать, записать, проверить и восстановить</a></p>
@@ -240,7 +240,7 @@
             <button id="systemStop" class="danger" type="button" disabled>■ Остановить весь проект</button>
             <button id="systemRefresh" class="secondary" type="button">◉ Проверить статус</button>
           </div>
-          <p class="muted">Остановка во время сборки прервёт компиляцию. Восстановление с Linux: <code>cd /1tbdisk/PegineLab/projects/YadroKreator &amp;&amp; bash start.sh</code>. С Windows: <code>ssh user@192.168.0.100</code>, затем <code>bash start.sh</code>. Кнопка запуска в отключённой панели работать не может; не выключайте сайт ради обновления GitHub.</p>
+          <p class="muted">Остановка во время сборки прервёт компиляцию. Восстановление с Linux: <code>cd /1tbdisk/PegineLab/projects/YadroKreator &amp;&amp; bash start.sh</code>. С Windows: <code>ssh user@CORE</code>, затем <code>bash start.sh</code>. Кнопка запуска в отключённой панели работать не может; не выключайте сайт ради обновления GitHub.</p>
         </div>
         <div class="surface" id="githubProjectRegistry">
           <div class="surface-head"><div><small>GITHUB PROJECT SOURCES</small><h3>Подключение веток и независимых проектов</h3></div><span class="tag neutral">Только доверенный GitHub · musikfed</span></div>
@@ -311,7 +311,7 @@
           </div>
           <p class="muted">Только YadroKreator. Новые версии проверяются в GitHub; действия выполняются через systemd независимо от браузера. Во время компиляции обновление и откат запрещены.</p>
         </div>
-        <div class="system-grid"><div class="surface"><div class="surface-head"><div><small>HOST MACHINE</small><h3>CORE · Huananzhi X79</h3></div><span class="tag">UBUNTU 24.04</span></div><div class="system-rows"><div><span>Веб-порт</span><b>192.168.0.100:62404 / VPN-LAN</b></div><div><span>Исполнение</span><b>systemd user services</b></div><div><span>База данных</span><b>SQLite · WAL</b></div><div><span>Web server</span><b>Waitress · Flask / Python venv</b></div><div><span>Сборка</span><b>Native ext4 / без Docker</b></div><div><span>Ограничение</span><b>CPU 0–15 · nice 10</b></div></div></div>
+        <div class="system-grid"><div class="surface"><div class="surface-head"><div><small>HOST MACHINE</small><h3>CORE · Huananzhi X79</h3></div><span class="tag">UBUNTU 24.04</span></div><div class="system-rows"><div><span>Веб-порт</span><b>CORE · LAN/VPN / VPN-LAN</b></div><div><span>Исполнение</span><b>systemd user services</b></div><div><span>База данных</span><b>SQLite · WAL</b></div><div><span>Web server</span><b>Waitress · Flask / Python venv</b></div><div><span>Сборка</span><b>Native ext4 / без Docker</b></div><div><span>Ограничение</span><b>CPU 0–15 · nice 10</b></div></div></div>
           <div class="surface"><div class="surface-head"><div><small>WORKSPACE PATHS</small><h3>Каталоги</h3></div></div><div class="paths"><p><span>Корень станции</span><code id="pathRoot">—</code></p><p><span>WIFICAM</span><code id="pathProject">—</code></p><p><span>Thingino</span><code id="pathThingino">—</code></p></div></div>
         </div>
       </section>
