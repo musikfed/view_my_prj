@@ -313,16 +313,23 @@
       "kind": "infra",
       "accent": "#ceb087",
       "tagline": "Параллельная доставка файлов",
-      "description": "Авторская программа для параллельной раскладки файлов на SSH-серверы по .prj-манифестам.",
+      "description": "Авторский Python-интерпретатор .prj с параллельными SSH/SFTP-задачами; на отдельном сайте — интерактивная схема кода и аудит SHA-256.",
       "stack": [
         "Python",
         "SSH",
         ".prj",
         "Linux"
       ],
-      "source": "README.md",
+      "source": "pitools.py · pitools.prj · РЕФЕРАТ.pdf",
       "status": "Зарегистрированная программа для ЭВМ",
-      "branch": "pitools"
+      "branch": "pitools",
+      "showcase": "/view_my_prj/pitools/",
+      "showcase_type": "static interactive explanation, no SSH",
+      "certificate": {
+        "registration_number": "2026610793",
+        "registration_date": "2026-01-15",
+        "application": "2025698382"
+      }
     },
     {
       "id": "analitikhhru",
