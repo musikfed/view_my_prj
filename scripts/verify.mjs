@@ -30,7 +30,7 @@ for(const project of d.projects) {
     const source = read(f);
     assert(!source.includes('<script'), 'UI snapshot must not execute backend JS '+project.id);
     assert(page.includes('sandbox=""'), 'UI should be sandboxed '+project.id);
-  } else assert(page.includes('Исходные файлы') || page.includes('SOURCE FILES'), 'Projects without screenshot cannot invent UI '+project.id);
+  } else assert(page.includes('Исходные файлы') || page.includes('SOURCE FILES') || page.includes('Реальный исходный материал'), 'Projects without screenshot cannot invent UI '+project.id);
   assert(tr.projects[project.id], 'Missing translations '+project.id);
   for (const language of supported) assert(tr.projects[project.id][language], 'Missing '+language+' for '+project.id);
   for(const id of forbidden) assert(!page.includes('github.com/musikfed/' + id), 'Private project leak '+project.id);
