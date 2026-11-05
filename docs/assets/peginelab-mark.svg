@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="PL — PegiNelab">
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0d5"/><stop offset=".52" stop-color="#e8c08a"/><stop offset="1" stop-color="#b88b58"/></linearGradient></defs>
+<rect x="2.5" y="2.5" width="59" height="59" rx="13" fill="#111a22" stroke="#e2ae75" stroke-opacity=".75" stroke-width="1.5"/>
+<path d="M14 43V16h12c8 0 12 4 12 10s-4 10-12 10H14M38 22v21h12" fill="none" stroke="url(#gold)" stroke-width="5.4" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M13 50H51" stroke="#e2ae75" stroke-width="1.7" opacity=".55"/>
+</svg>

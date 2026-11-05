@@ -45,6 +45,13 @@ for (const id of ['registry-change-explorer', 'esp32s3devkitC-1N16R8']) {
   assert(page.includes('sandbox="allow-scripts"') && page.includes('https://musikfed.github.io/' + id + '/'), 'Standalone embedded presentation missing: ' + id);
 }
 assert(home.includes('Studio%20esp32_2.jpg') && read('projects/esp32s3devkitC-1N16R8/index.html').includes('Studio%20esp32_2.jpg'), 'Real ESP32 screenshot not shown');
+assert(!home.includes('class="featured" aria-label="Selected actual applications"') && !home.includes('class="spotlight-duo"'), 'Favorites must be removed');
+assert(home.includes('id="catalog-sort"') && home.includes('id="catalog-year"'), 'Creation date controls are required');
+for (const project of d.projects) {
+  assert(/^\\d{4}-\\d{2}-\\d{2}T/.test(project.created_at), 'Missing real GitHub creation date for '+project.id);
+  assert(home.includes('data-project-id="'+project.id+'"'), 'Missing chronological card for '+project.id);
+}
+assert(fs.existsSync(new URL('assets/peginelab-mark.svg',root)), 'PL vector brand mark missing');
 const pitoolsSite=read('pitools/index.html');
 const pitoolsDemo=read('pitools/demo.js');
 const pitoolsLegacy=read('projects/pitools/index.html');

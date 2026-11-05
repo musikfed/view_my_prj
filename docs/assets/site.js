@@ -1,6 +1,38 @@
 (() => {
   "use strict";
   const BASE = "/view_my_prj/";
+  // The homepage is already newest-first in static HTML; controls never need remote APIs.
+  const gallery = document.querySelector(".project-gallery");
+  const sort = document.getElementById("catalog-sort");
+  const year = document.getElementById("catalog-year");
+  const count = document.getElementById("catalog-count");
+  if (gallery && sort && year) {
+    const cards = Array.from(gallery.querySelectorAll(":scope > .tile"));
+    try {
+      const savedSort = sessionStorage.getItem("view-my-prj-sort");
+      const savedYear = sessionStorage.getItem("view-my-prj-year");
+      if (["newest","oldest","name"].includes(savedSort)) sort.value=savedSort;
+      if (["all","2026","2023","2022"].includes(savedYear)) year.value=savedYear;
+    } catch (_) { /* Storage may be disabled. */ }
+    const renderCatalog = () => {
+      const sorted = cards.slice().sort((a,b)=>{
+        if(sort.value==="name") return a.querySelector("h3").textContent.localeCompare(b.querySelector("h3").textContent,undefined,{sensitivity:"base"});
+        return sort.value==="oldest" ? a.dataset.created.localeCompare(b.dataset.created) : b.dataset.created.localeCompare(a.dataset.created);
+      });
+      let visible=0;
+      for (const card of sorted) {
+        const ok = year.value==="all" || card.dataset.created.slice(0,4)===year.value;
+        card.hidden=!ok;
+        if(ok) visible++;
+        gallery.appendChild(card);
+      }
+      count.textContent=visible+" / "+cards.length+" проектов";
+      try{sessionStorage.setItem("view-my-prj-sort",sort.value);sessionStorage.setItem("view-my-prj-year",year.value)}catch(_){}
+    };
+    sort.addEventListener("change",renderCatalog);
+    year.addEventListener("change",renderCatalog);
+    renderCatalog();
+  }
   const supported = ["ru","en","zh","de","hi","fr","fi","ko","ja","it","be"];
   const params = new URLSearchParams(location.search);
   const selected = params.get("lang");

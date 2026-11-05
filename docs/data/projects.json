@@ -31,7 +31,8 @@
         "ComfyUI"
       ],
       "source": "docs/media/achewiw-home.svg",
-      "status": "Авторская студия, активная разработка"
+      "status": "Авторская студия, активная разработка",
+      "created_at": "2026-11-02T08:29:57Z"
     },
     {
       "id": "muzikfed",
@@ -49,7 +50,8 @@
         "Ollama"
       ],
       "source": "web/index.html",
-      "status": "Рабочий экспериментальный прототип"
+      "status": "Рабочий экспериментальный прототип",
+      "created_at": "2026-11-02T12:51:14Z"
     },
     {
       "id": "YadroKreator",
@@ -68,7 +70,8 @@
         "Linux"
       ],
       "source": "templates/index.html + static/app.css",
-      "status": "Панель локальной инфраструктуры"
+      "status": "Панель локальной инфраструктуры",
+      "created_at": "2026-11-01T20:08:31Z"
     },
     {
       "id": "smilegun_v2",
@@ -88,7 +91,8 @@
         "Canvas"
       ],
       "source": "templates/index.html",
-      "status": "Экспериментальная игра"
+      "status": "Экспериментальная игра",
+      "created_at": "2026-10-16T11:07:48Z"
     },
     {
       "id": "smilegun",
@@ -107,7 +111,8 @@
       ],
       "source": "docs/screenshots/menu-preview.svg",
       "status": "Исследовательский прототип",
-      "branch": "my-game"
+      "branch": "my-game",
+      "created_at": "2026-10-03T18:11:51Z"
     },
     {
       "id": "Hombo3_3.0.0",
@@ -126,7 +131,8 @@
         "OTA"
       ],
       "source": "webui (1).png · frontend/src",
-      "status": "Робототехнический проект"
+      "status": "Робототехнический проект",
+      "created_at": "2026-08-31T13:45:45Z"
     },
     {
       "id": "diskshellhdd",
@@ -144,7 +150,8 @@
       ],
       "source": "frontend/src/App.jsx → Vite build → real Chromium screenshot (GitHub Actions)",
       "status": "Настоящий React-фронтенд собран в CI; без локального backend",
-      "image": "https://raw.githubusercontent.com/musikfed/diskshellhdd/main/docs/screenshots/frontend-code-preview.png"
+      "image": "https://raw.githubusercontent.com/musikfed/diskshellhdd/main/docs/screenshots/frontend-code-preview.png",
+      "created_at": "2026-10-22T03:16:07Z"
     },
     {
       "id": "registry-change-explorer",
@@ -162,7 +169,8 @@
         "Python"
       ],
       "source": "docs/screenshots/main-preview.svg",
-      "status": "Прототип чтения реестра"
+      "status": "Прототип чтения реестра",
+      "created_at": "2026-10-10T16:26:12Z"
     },
     {
       "id": "myipcam",
@@ -181,7 +189,8 @@
         "microSD"
       ],
       "source": "docs/screenshots/dashboard-wifi.svg",
-      "status": "Аппаратные испытания"
+      "status": "Аппаратные испытания",
+      "created_at": "2026-10-13T01:58:59Z"
     },
     {
       "id": "wificam_T23N",
@@ -200,7 +209,8 @@
         "RTSP"
       ],
       "source": "docs/screenshots/dashboard.svg",
-      "status": "Проверенный SD-базис; новые сборки на испытаниях"
+      "status": "Проверенный SD-базис; новые сборки на испытаниях",
+      "created_at": "2026-10-16T21:52:41Z"
     },
     {
       "id": "wifcam_helper",
@@ -218,7 +228,8 @@
       ],
       "source": "wifcam_helper/ui.html",
       "status": "Испытательный стенд",
-      "preview": "wifcam-helper"
+      "preview": "wifcam-helper",
+      "created_at": "2026-11-03T09:44:29Z"
     },
     {
       "id": "micro",
@@ -235,7 +246,8 @@
         "Ollama"
       ],
       "source": "README.md",
-      "status": "Разработка, активная интеграционная ветка"
+      "status": "Разработка, активная интеграционная ветка",
+      "created_at": "2026-10-17T23:46:52Z"
     },
     {
       "id": "Irila_baikal_v1.0",
@@ -253,7 +265,8 @@
       ],
       "source": "ui/web/index.html + ui/web/style.css",
       "status": "Первый запуск подтверждён",
-      "preview": "irila"
+      "preview": "irila",
+      "created_at": "2026-10-29T00:18:56Z"
     },
     {
       "id": "esp32s3devkitC-1N16R8",
@@ -272,7 +285,8 @@
       ],
       "source": "Studio esp32_2.jpg",
       "status": "Разработка аппаратной студии",
-      "image2": "https://raw.githubusercontent.com/musikfed/esp32s3devkitC-1N16R8/main/docs/screenshots/studio-preview.svg"
+      "image2": "https://raw.githubusercontent.com/musikfed/esp32s3devkitC-1N16R8/main/docs/screenshots/studio-preview.svg",
+      "created_at": "2026-08-30T00:44:53Z"
     },
     {
       "id": "pgsql",
@@ -289,7 +303,8 @@
         "Kubernetes"
       ],
       "source": "README.md",
-      "status": "Лаборатория, не production-ready"
+      "status": "Лаборатория, не production-ready",
+      "created_at": "2022-09-11T17:47:38Z"
     },
     {
       "id": "postgresql1c",
@@ -305,7 +320,8 @@
         "1C"
       ],
       "source": "readme.md",
-      "status": "Основан на коде другого автора"
+      "status": "Основан на коде другого автора",
+      "created_at": "2022-08-17T11:04:43Z"
     },
     {
       "id": "pitools",
@@ -330,7 +346,8 @@
         "registration_number": "2026610793",
         "registration_date": "2026-01-15",
         "application": "2025698382"
-      }
+      },
+      "created_at": "2026-10-07T16:05:43Z"
     },
     {
       "id": "analitikhhru",
@@ -348,7 +365,8 @@
         "Analytics"
       ],
       "source": "docs/screenshots/dashboard-preview.svg",
-      "status": "Экспериментальный локальный инструмент"
+      "status": "Экспериментальный локальный инструмент",
+      "created_at": "2026-08-31T15:38:23Z"
     },
     {
       "id": "docker-compose-ui",
@@ -367,7 +385,8 @@
       "status": "Форк стороннего проекта",
       "branch": "master",
       "image": "https://raw.githubusercontent.com/musikfed/docker-compose-ui/master/screenshots/project-detail.png",
-      "image2": "https://raw.githubusercontent.com/musikfed/docker-compose-ui/master/screenshots/project-wizard.png"
+      "image2": "https://raw.githubusercontent.com/musikfed/docker-compose-ui/master/screenshots/project-wizard.png",
+      "created_at": "2023-04-27T12:14:37Z"
     },
     {
       "id": "ai_video3060_12G",
@@ -382,7 +401,8 @@
         "Planning"
       ],
       "source": "README.md",
-      "status": "Заготовка, без готового движка"
+      "status": "Заготовка, без готового движка",
+      "created_at": "2026-11-04T19:32:30Z"
     }
   ]
 }
