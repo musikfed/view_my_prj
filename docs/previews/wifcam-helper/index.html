@@ -47,18 +47,18 @@ button,select,input{pointer-events:none!important} a.secondary{pointer-events:no
 <div class="language"><label for="locale" data-i18n="language">Язык</label><select id="locale">
 <option value="ru">Русский</option><option value="en">English</option><option value="be">Беларуская</option><option value="sah">Саха тыла</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="zh-CN">简体中文</option>
 </select></div></header>
-<section class="panel active" id="overview"><div class="hero"><small data-i18n="local">Локально, без облака</small><h2 data-i18n="hero"></h2><p data-i18n="description">Измеряем то, что камера действительно умеет — без облака и без перепрошивки.</p><span class="badge" data-i18n="safe">Без записи SD и перезапуска камеры</span></div>
+<section class="panel active" id="overview"><div class="hero"><small data-i18n="local">Локально, без облака</small><h2 data-i18n="hero">Камера как голова робота</h2><p data-i18n="description">Измеряем то, что камера действительно умеет — без облака и без перепрошивки.</p><span class="badge" data-i18n="safe">Без записи SD и перезапуска камеры</span></div>
 <div class="cards"><div class="card"><span class="ico">◉</span><strong data-i18n="camera">Камера</strong><p data-i18n="model">Galayou G2 · SC2336 · ATBM6012BX</p></div>
 <div class="card"><span class="ico">◈</span><strong data-i18n="video">Видео / задержка</strong><p data-i18n="videoNote">Время открытия RTSP и скорость декодирования — НЕ задержка от объектива до экрана.</p></div>
 <div class="card"><span class="ico">♫</span><strong data-i18n="assistant">Голосовой напарник</strong><p data-i18n="audioNote">Для голосового напарника обязателен реальный вход микрофона и выход штатного динамика.</p></div></div>
-<div class="card"><h2 data-i18n="notice"></h2><p data-i18n="protected">SSH доступ и SD-образ сохраняются</p><p data-i18n="gpu">RTX 3060: внешняя классификация / STT / TTS, не на T23N</p></div></section>
-<section class="panel" id="capabilities"><div class="card"><h2 data-i18n="capabilities"></h2>
+<div class="card"><h2 data-i18n="notice">Нет аппаратных результатов — наличие драйвера не подтверждает микрофон или динамик.</h2><p data-i18n="protected">SSH доступ и SD-образ сохраняются</p><p data-i18n="gpu">RTX 3060: внешняя классификация / STT / TTS, не на T23N</p></div></section>
+<section class="panel" id="capabilities"><div class="card"><h2 data-i18n="capabilities">Возможности</h2>
 <div class="formgrid"><div><label for="host" data-i18n="host">Адрес камеры</label><input id="host" placeholder="192.168.1.55" autocomplete="off"></div>
 <div><label for="user" data-i18n="user">SSH пользователь</label><input id="user" value="root" autocomplete="off"></div>
 <div><label for="key" data-i18n="key">Путь к SSH-ключу (на сервере)</label><input id="key" type="text" placeholder="~/.ssh/id_ed25519" autocomplete="off"></div></div>
 <div class="test-row"><button class="primary" data-kind="inventory" data-i18n="inventory">Проверить аппаратные возможности</button></div>
 <div class="statusline" id="inventoryNote" data-i18n="notice">Нет аппаратных результатов — наличие драйвера не подтверждает микрофон или динамик.</div></div></section>
-<section class="panel" id="video"><div class="card"><h2 data-i18n="video"></h2>
+<section class="panel" id="video"><div class="card"><h2 data-i18n="video">Видео / задержка</h2>
 <div class="formgrid"><div><label for="url" data-i18n="url">Адрес RTSP</label><input id="url" placeholder="rtsp://CAMERA_IP:554/ch0" autocomplete="off" spellcheck="false"></div>
 <div><label for="transport" data-i18n="transport">Передача RTSP</label><select id="transport"><option value="tcp">TCP</option><option value="udp">UDP</option></select></div></div>
 <div style="margin-top:12px"><label for="altUrl" data-i18n="altUrl">Второй RTSP-поток (если существует)</label><input id="altUrl" placeholder="rtsp://CAMERA_IP:554/ch1" autocomplete="off" spellcheck="false"></div>
@@ -71,16 +71,16 @@ button,select,input{pointer-events:none!important} a.secondary{pointer-events:no
 <div class="consent"><input id="visionConsent" type="checkbox"><label for="visionConsent" data-i18n="visionConsent">Разрешаю обработать один кадр локально на CORE без сохранения</label></div>
 <div class="test-row"><button class="primary" data-kind="classification" data-i18n="visionTest">Проверить классификатор YOLO</button></div>
 <div class="statusline" data-i18n="videoNote">Время открытия RTSP и скорость декодирования — НЕ задержка от объектива до экрана.</div></div></section>
-<section class="panel" id="audio"><div class="card"><h2 data-i18n="audio"></h2>
+<section class="panel" id="audio"><div class="card"><h2 data-i18n="audio">Микрофон и динамик</h2>
 <p class="muted" data-i18n="audioNote">Для голосового напарника обязателен реальный вход микрофона и выход штатного динамика.</p>
 <div class="consent"><input id="micConsent" type="checkbox"><label for="micConsent" data-i18n="micConsent">Разрешаю короткий захват звука с моей камеры без сохранения записи</label></div>
 <div class="test-row"><button class="primary" data-kind="microphone" data-i18n="micTest">Проверить микрофон</button></div>
 <div class="consent"><input id="speakerConsent" type="checkbox"><label for="speakerConsent" data-i18n="speakerConsent">Нахожусь рядом с камерой и разрешаю тихий короткий звук</label></div>
 <div class="test-row"><button class="primary" data-kind="speaker" data-i18n="speakerTest">Проверить динамик</button></div>
 <p class="muted" data-i18n="privacy">Аудиофрагмент анализируется в памяти, в Git не публикуется.</p></div></section>
-<section class="panel" id="profiles"><div class="card"><h2 data-i18n="profiles"></h2><p data-i18n="presetNote">Профиль переносится в сборщик только после явного подтверждения. Итоги тестов не меняют ядро автоматически.</p>
+<section class="panel" id="profiles"><div class="card"><h2 data-i18n="profiles">Профили сборки</h2><p data-i18n="presetNote">Профиль переносится в сборщик только после явного подтверждения. Итоги тестов не меняют ядро автоматически.</p>
 <a class="secondary" href="#preview" download="wifcam-approved-candidate.json" data-i18n="preset">Скачать безопасный профиль для YadroKreator</a><p class="muted" data-i18n="protected">SSH доступ и SD-образ сохраняются</p></div></section>
-<section class="panel" id="reports"><div class="card"><h2 data-i18n="report"></h2><pre id="report"></pre><div class="test-row"><button id="refreshHistory" class="primary" data-i18n="helperHistoryRefresh">↻ Обновить историю</button></div><h3 data-i18n="helperHistoryTitle"></h3><pre id="historyList"></pre>
+<section class="panel" id="reports"><div class="card"><h2 data-i18n="report">Последний отчёт</h2><pre id="report"></pre><div class="test-row"><button id="refreshHistory" class="primary" data-i18n="helperHistoryRefresh">↻ Обновить историю</button></div><h3 data-i18n="helperHistoryTitle">История диагностических проверок Helper</h3><pre id="historyList"></pre>
 <div class="test-row"><a id="helpLink" class="secondary" href="https://github.com/musikfed/wifcam_helper/tree/main/wiki" target="_blank" rel="noopener noreferrer" data-i18n="help">Инструкция</a></div></div></section>
 <div class="footerline">Демонстрация исходного интерфейса · без подключения к камере, серверу или API</div></main></div>
 </body></html>
