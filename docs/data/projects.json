@@ -349,15 +349,17 @@
       "kind": "infra",
       "accent": "#7ab5cf",
       "tagline": "Веб-интерфейс Docker Compose",
-      "description": "Форк проекта другого автора, не самостоятельная оригинальная разработка.",
+      "description": "Форк Docker Compose UI с исходными скриншотами и сохранённой атрибуцией francescou; веб-панель не запускается на публичной витрине.",
       "stack": [
         "Docker",
         "Compose",
         "Web UI"
       ],
-      "source": "Upstream README",
+      "source": "screenshots/project-detail.png (upstream fork, francescou)",
       "status": "Форк стороннего проекта",
-      "branch": "master"
+      "branch": "master",
+      "image": "https://raw.githubusercontent.com/musikfed/docker-compose-ui/master/screenshots/project-detail.png",
+      "image2": "https://raw.githubusercontent.com/musikfed/docker-compose-ui/master/screenshots/project-wizard.png"
     },
     {
       "id": "ai_video3060_12G",
