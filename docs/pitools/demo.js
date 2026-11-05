@@ -62,9 +62,9 @@ function translate(){
  const original=qs("originalProject");if(original)original.href="/view_my_prj/projects/pitools/"+(lang==="ru"?"":"?lang="+encodeURIComponent(lang));
 }
 function statusFor(i){
- if(i>=6)return i===0?"warning":"sent";
- if(state.step>=6)return "sent";
- if(state.step>=4)return "busy";
+ if(state.step>=6)return i===0?"warning":"sent";
+ if(state.step>=5)return "sent";
+ if(state.step>=3)return "busy";
  return "idle";
 }
 function hostStatusLabel(i){
