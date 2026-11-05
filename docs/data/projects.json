@@ -244,15 +244,16 @@
       "kind": "linux",
       "accent": "#80c7d8",
       "tagline": "Своя операционная система",
-      "description": "Экспериментальная Linux-система. Реальный первый запуск на Acer Swift 3 подтверждён испытаниями; совместимость оборудования в проверке.",
+      "description": "Оригинальный статический рабочий стол «Ирина Байкал 1.0» из исходников Irina Shell. Первый запуск Ubuntu на Acer Swift 3 подтверждён отдельно.",
       "stack": [
         "Ubuntu",
         "UEFI",
         "Secure Boot",
         "XFCE"
       ],
-      "source": "docs/first_boot/README.md",
-      "status": "Первый запуск подтверждён"
+      "source": "ui/web/index.html + ui/web/style.css",
+      "status": "Первый запуск подтверждён",
+      "preview": "irila"
     },
     {
       "id": "esp32s3devkitC-1N16R8",
