@@ -18,4 +18,6 @@ jobs:
         run: |
           node --check docs/assets/site.js
           node --check docs/pitools/demo.js
+          python3 scripts/generate-seo-pages.py
+          python3 scripts/generate-seo-pages.py --check
           node scripts/verify.mjs

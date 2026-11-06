@@ -35,32 +35,67 @@
   }
   const supported = ["ru","en","zh","de","hi","fr","fi","ko","ja","it","be"];
   const params = new URLSearchParams(location.search);
+  const pathLocale = location.pathname.match(/^\/view_my_prj\/(ru|en|zh|de|hi|fr|fi|ko|ja|it|be)\/?$/)?.[1];
   const selected = params.get("lang");
-  const lang = supported.includes(selected) ? selected : "ru";
+  const isProject = document.body.dataset.page === "project";
+  const isLanding = !isProject && !pathLocale;
+  const lang = pathLocale || (supported.includes(selected) ? selected : "ru");
   document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
-  // Personal CV uses hash-based locales rather than ?lang= like this gallery.
+
+  // Old query-based catalog URLs are retained but lead to one stable indexable URL.
+  if (isLanding && supported.includes(selected)) {
+    location.replace(BASE + selected + "/" + location.hash);
+    return;
+  }
   document.querySelectorAll("a[data-personal-site]").forEach(a => {
-    a.href = "https://musikfed.github.io/my_self/#" + lang;
+    a.href = "https://musikfed.github.io/my_self/" + lang + "/";
   });
 
   function updateLink(a) {
     const raw = a.getAttribute("href");
     if (!raw || !raw.startsWith(BASE)) return;
-    const u = new URL(raw, location.origin);
-    if (lang === "ru") u.searchParams.delete("lang");
-    else u.searchParams.set("lang", lang);
-    a.setAttribute("href", u.pathname + u.search + u.hash);
+    if (raw.startsWith(BASE + "projects/") || raw.startsWith(BASE + "pitools/")) {
+      // Technical detail pages still use their original canonical URL and
+      // client-side translation until source paragraphs are reviewed for SEO.
+      if (isProject || lang === "ru") return;
+      const u = new URL(raw, location.origin);
+      u.searchParams.set("lang",lang);
+      a.setAttribute("href",u.pathname+u.search+u.hash);
+      return;
+    }
+    if (raw === BASE) a.setAttribute("href", BASE + lang + "/");
   }
   document.querySelectorAll("a[href]").forEach(updateLink);
+
   const picker = document.getElementById("language");
   if (picker) {
     picker.value = lang;
+    picker.setAttribute("aria-label", "Выбрать язык / Choose language");
     picker.addEventListener("change", () => {
-      const next = new URL(location.href);
-      if (picker.value === "ru") next.searchParams.delete("lang");
-      else next.searchParams.set("lang", picker.value);
-      location.assign(next.pathname + next.search + next.hash);
+      if (!supported.includes(picker.value)) return;
+      if (isProject) {
+        const url = new URL(location.href);
+        if (picker.value === "ru") url.searchParams.delete("lang");
+        else url.searchParams.set("lang", picker.value);
+        location.assign(url.pathname + url.search + url.hash);
+      } else location.assign(BASE + picker.value + "/" + location.hash);
     });
+  }
+  if (isLanding && !selected) {
+    // Approximate browser LANGUAGE rather than IP country; keep this optional
+    // to avoid redirecting search bots and hiding any translated pages.
+    const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language||"ru"];
+    const preferred = browserLanguages.map(x => x.toLowerCase().split("-")[0]).find(x => supported.includes(x));
+    if (preferred && preferred !== "ru") {
+      const note = document.createElement("div");
+      note.className = "locale-suggestion";
+      note.style.cssText = "margin:12px auto 0;max-width:1150px;padding:10px 16px;border:1px solid #41515f;border-radius:8px;color:#e4edf5";
+      const link = document.createElement("a");
+      link.href = BASE + preferred + "/";
+      link.textContent = "🌐 " + (picker?.querySelector('option[value="'+preferred+'"]')?.textContent || preferred) + " — Choose language";
+      note.appendChild(link);
+      document.querySelector("header.site-head")?.insertAdjacentElement("afterend",note);
+    }
   }
 
   fetch(BASE + "data/i18n.json", {cache:"force-cache"})

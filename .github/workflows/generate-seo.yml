@@ -1,0 +1,52 @@
+name: Generate 11 indexable PEGINELAB catalog languages
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/index.html
+      - docs/data/i18n.json
+      - scripts/generate-seo-pages.py
+      - .github/workflows/generate-seo.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: peginelab-seo-generation
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate pretranslated HTML and sitemap
+        run: |
+          python3 scripts/generate-seo-pages.py
+          python3 scripts/generate-seo-pages.py --check
+      - name: Verify 11 SEO pages and unique canonicals
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          langs = "ru en zh de hi fr fi ko ja it be".split()
+          base = "https://musikfed.github.io/view_my_prj/"
+          for lang in langs:
+              html = (Path("docs")/lang/"index.html").read_text(encoding="utf-8")
+              assert f'<link rel="canonical" href="{base}{lang}/">' in html
+              assert html.count('<link rel="alternate" hreflang=') == 12
+              assert html.count('data-project=') == 20
+              assert '<h1 data-t="0">' in html and 'href="/view_my_prj/'+lang+'/"' in html
+          print("All 11 crawlable catalog home pages validated")
+          PY
+      - name: Commit generated localized pages only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/ru/index.html docs/en/index.html docs/zh/index.html docs/de/index.html docs/hi/index.html docs/fr/index.html docs/fi/index.html docs/ko/index.html docs/ja/index.html docs/it/index.html docs/be/index.html docs/sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Localized gallery files unchanged"
+          else
+            git commit -m "Publish 11 server-rendered PEGINELAB project catalogs"
+            git push origin HEAD:main
+          fi

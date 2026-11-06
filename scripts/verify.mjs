@@ -16,7 +16,7 @@ assert(Object.keys(tr.ui).join('|') === supported.join('|'), 'Eleven locales req
 assert(fs.existsSync(new URL('index.html',root)), 'Missing gallery homepage');
 const home = read('index.html');
 assert(home.includes('REAL SOURCE REFERENCES') || home.includes('LIVE SOURCE REFERENCES'), 'Main site should describe authentic source visuals');
-assert(home.includes('data-personal-site') && home.includes('https://musikfed.github.io/my_self/#ru'), 'Author site link missing');
+assert(home.includes('data-personal-site') && home.includes('https://musikfed.github.io/my_self/ru/'), 'Author site link missing');
 for (const language of supported) assert(typeof tr.ui[language][13] === 'string' && tr.ui[language][13], 'Missing author-link translation '+language);
 for(const id of forbidden) assert(!home.includes(id), 'Private project leaked to homepage: ' + id);
 for(const project of d.projects) {
@@ -125,3 +125,12 @@ console.log('Verified '+d.projects.length+' independent project pages, '+preview
   ' native safe HTML previews, '+realVisuals+' real visual presentations + PITOOLS SSH source simulation, 11 languages, '+
   checkedLocalLinks+' local links, sitemap and private repository isolation.');
 
+
+// SSR multilingual entry points: real content, not JS-only translations.
+for (const lang of supported) {
+  const page = read(lang + '/index.html');
+  assert(page.includes('rel="canonical" href="https://musikfed.github.io/view_my_prj/' + lang + '/"'), 'Missing canonical for '+lang);
+  assert((page.match(/hreflang=/g)||[]).length===12, 'Missing 11-way hreflang plus x-default for '+lang);
+  assert(page.includes('lang="'+(lang==='zh'?'zh-Hans':lang)+'"'), 'Bad HTML lang for '+lang);
+  assert(page.includes('data-project="achewiw"'), 'Translated project content absent for '+lang);
+}
