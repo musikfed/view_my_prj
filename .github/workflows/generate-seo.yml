@@ -48,5 +48,9 @@ jobs:
             echo "Localized gallery files unchanged"
           else
             git commit -m "Publish 11 server-rendered PEGINELAB project catalogs"
+            # Other UI/CSS changes may land while CI is generating the 11 pages.
+            # Rebase rather than force-push or discard newer source changes.
+            git fetch --no-tags origin main
+            git rebase origin/main
             git push origin HEAD:main
           fi
