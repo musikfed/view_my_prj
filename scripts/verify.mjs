@@ -67,6 +67,7 @@ const hhPage=read('projects/analitikhhru/index.html');
 assert(hhPage.includes('sandbox="allow-scripts"') && hhPage.includes('https://musikfed.github.io/analitikhhru/'), 'Original HH demo iframe missing');
 assert(home.includes('market-radar-archive.svg') && hhPage.includes('pulse-market-archive.svg'), 'New Market Radar previews missing');
 const pitoolsSite=read('pitools/index.html');
+checkPhoneFree(pitoolsSite, 'PITOOLS standalone page');
 const pitoolsDemo=read('pitools/demo.js');
 const pitoolsLegacy=read('projects/pitools/index.html');
 assert(home.includes('href="/view_my_prj/pitools/"'), 'PITOOLS interactive site is not featured on gallery home');
