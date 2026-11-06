@@ -117,8 +117,8 @@ for (const htmlFile of publishedFiles) {
   }
 }
 assert(publishedFiles.length>=26, 'All project and read-only preview HTML pages must exist');
-assert(read('sitemap.xml').match(/<url>/g)?.length===21,
-  'Search sitemap must include the homepage and all twenty public projects');
+assert(read('sitemap.xml').match(/<url>/g)?.length===31,
+  'Search sitemap must include eleven localized catalog pages and twenty original projects');
 const previews = d.projects.filter(p=>p.preview).length;
 const realVisuals = d.projects.filter(p=>p.preview || p.image).length;
 console.log('Verified '+d.projects.length+' independent project pages, '+previews+
