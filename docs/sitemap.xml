@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://musikfed.github.io/view_my_prj/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/ru/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/en/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/zh/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/de/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/hi/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/fr/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/fi/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/ko/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/ja/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/it/</loc></url>
+  <url><loc>https://musikfed.github.io/view_my_prj/be/</loc></url>
   <url><loc>https://musikfed.github.io/view_my_prj/projects/achewiw/</loc></url>
   <url><loc>https://musikfed.github.io/view_my_prj/projects/muzikfed/</loc></url>
   <url><loc>https://musikfed.github.io/view_my_prj/projects/YadroKreator/</loc></url>
