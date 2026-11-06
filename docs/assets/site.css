@@ -121,3 +121,24 @@ footer{border-top:1px solid #25333e;margin-top:70px;padding:24px 0 36px;display:
 .site-head .head-actions .head-feature-link--primary{border-color:#d2a56a;color:#f0c68e;background:#19232e}
 .site-head .head-actions .head-feature-link:focus-visible{outline:2px solid #efc58f;outline-offset:2px}
 @media(max-width:750px){.site-head .head-actions{gap:9px}.site-head .head-actions .head-feature-link{padding:8px 10px;font-size:12px}}
+
+/* Low-key author link: underline instead of a promotional button.
+   The link already points to the language-matched my_self page. */
+.site-head .head-actions a[data-personal-site]{
+  border:0;
+  border-radius:0;
+  background:transparent;
+  padding:0;
+  font-weight:500;
+  color:#e9d0ae;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:1px;
+}
+.site-head .head-actions a[data-personal-site]:hover,
+.site-head .head-actions a[data-personal-site]:focus-visible{
+  border:0;
+  background:transparent;
+  color:#fff2dc;
+  text-decoration-thickness:2px;
+}
