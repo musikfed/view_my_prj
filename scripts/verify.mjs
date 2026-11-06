@@ -22,12 +22,14 @@ function checkPhoneFree(page, name) {
 checkPhoneFree(home, 'main catalog');
 const repoReadme = fs.readFileSync(new URL('../README.md',root),'utf8');
 checkPhoneFree(repoReadme, 'README');
+assert(!Object.prototype.hasOwnProperty.call(d.contact, 'phone'), 'Personal phone field leaked into project data');
 assert(home.includes('REAL SOURCE REFERENCES') || home.includes('LIVE SOURCE REFERENCES'), 'Main site should describe authentic source visuals');
 assert(home.includes('data-personal-site') && home.includes('https://musikfed.github.io/my_self/ru/'), 'Author site link missing');
 for (const language of supported) assert(typeof tr.ui[language][13] === 'string' && tr.ui[language][13], 'Missing author-link translation '+language);
 for(const id of forbidden) assert(!home.includes(id), 'Private project leaked to homepage: ' + id);
 for(const project of d.projects) {
   const page = read('projects/' + project.id + '/index.html');
+  checkPhoneFree(page, project.id+' project detail');
   assert(page.includes('<title>') && page.includes('canonical'), 'Missing SEO metadata ' + project.id);
   assert(page.includes('github.com/musikfed/' + project.id), 'Missing source link '+project.id);
   assert(page.includes('feudor.lab@yandex.ru'), 'Missing author contacts '+project.id);
