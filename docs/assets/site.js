@@ -6,6 +6,8 @@
   const sort = document.getElementById("catalog-sort");
   const year = document.getElementById("catalog-year");
   const count = document.getElementById("catalog-count");
+  const browserPageLanguage = document.documentElement.lang === "zh-Hans" ? "zh" : document.documentElement.lang;
+  const countNames = {"ru":"проектов","en":"projects","zh":"个项目","de":"Projekte","hi":"परियोजनाएँ","fr":"projets","fi":"projektia","ko":"개 프로젝트","ja":"プロジェクト","it":"progetti","be":"праектаў"};
   if (gallery && sort && year) {
     const cards = Array.from(gallery.querySelectorAll(":scope > .tile"));
     try {
@@ -26,7 +28,7 @@
         if(ok) visible++;
         gallery.appendChild(card);
       }
-      count.textContent=visible+" / "+cards.length+" проектов";
+      count.textContent=visible+" / "+cards.length+" "+(countNames[browserPageLanguage]||countNames.ru);
       try{sessionStorage.setItem("view-my-prj-sort",sort.value);sessionStorage.setItem("view-my-prj-year",year.value)}catch(_){}
     };
     sort.addEventListener("change",renderCatalog);
@@ -70,7 +72,7 @@
   const picker = document.getElementById("language");
   if (picker) {
     picker.value = lang;
-    picker.setAttribute("aria-label", "Выбрать язык / Choose language");
+    if (!picker.hasAttribute("aria-label")) picker.setAttribute("aria-label", "Choose language");
     picker.addEventListener("change", () => {
       if (!supported.includes(picker.value)) return;
       if (isProject) {
