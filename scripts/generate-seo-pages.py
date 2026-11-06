@@ -91,7 +91,8 @@ def build(check: bool) -> None:
         page = page.replace('aria-label="Фильтр года создания"', 'aria-label="' + html.escape(EXTRA[lang][5]) + '"')
         page = page.replace('<label>Год создания<select', '<label>' + html.escape(EXTRA[lang][5]) + '<select')
         page = page.replace('20 проектов</output>', '20 ' + html.escape(EXTRA[lang][7]) + '</output>')
-        page = page.replace('class="language" aria-label="Language"', 'class="language" aria-label="' + html.escape(CHOOSE[lang]) + '"')
+        page = page.replace('class="language" aria-label="Выбрать язык"', 'class="language" aria-label="' + html.escape(CHOOSE[lang]) + '"')
+        page = page.replace('class="locale-caption" for="language">Выбрать язык', 'class="locale-caption" for="language">' + html.escape(CHOOSE[lang]))
         # Replace every visible catalog status/CTA/date prefix in the source HTML.
         source_phrases = TILE_LABELS["ru"]
         for old_text, new_text in zip(source_phrases, TILE_LABELS[lang]):
