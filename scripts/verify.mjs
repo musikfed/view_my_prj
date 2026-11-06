@@ -17,7 +17,7 @@ assert(fs.existsSync(new URL('index.html',root)), 'Missing gallery homepage');
 const home = read('index.html');
 const phonePattern = /(?:\+7|8)[ \t()\-]*\d{3}[ \t()\-]*\d{3}[ \t()\-]*\d{2}[ \t()\-]*\d{2}/;
 function checkPhoneFree(page, name) {
-  assert(!page.includes('href="tel:') && !phonePattern.test(page), 'Personal phone leaked into '+name);
+  assert(!page.includes('tel:') && !phonePattern.test(page), 'Personal phone leaked into '+name);
 }
 checkPhoneFree(home, 'main catalog');
 const repoReadme = fs.readFileSync(new URL('../README.md',root),'utf8');
@@ -68,6 +68,20 @@ assert(hhPage.includes('sandbox="allow-scripts"') && hhPage.includes('https://mu
 assert(home.includes('market-radar-archive.svg') && hhPage.includes('pulse-market-archive.svg'), 'New Market Radar previews missing');
 const pitoolsSite=read('pitools/index.html');
 checkPhoneFree(pitoolsSite, 'PITOOLS standalone page');
+
+function checkAllPublishedText(directory, prefix = '') {
+  for (const item of fs.readdirSync(directory, { withFileTypes: true })) {
+    const absolute = path.join(directory, item.name);
+    const relative = prefix + item.name;
+    if (item.isDirectory()) {
+      checkAllPublishedText(absolute, relative + '/');
+    } else if (item.isFile() && /\.(?:html?|json|md|txt|css|js|xml|svg)$/i.test(item.name)) {
+      checkPhoneFree(fs.readFileSync(absolute, 'utf8'), relative);
+    }
+  }
+}
+checkAllPublishedText(fileURLToPath(root));
+
 const pitoolsDemo=read('pitools/demo.js');
 const pitoolsLegacy=read('projects/pitools/index.html');
 assert(home.includes('href="/view_my_prj/pitools/"'), 'PITOOLS interactive site is not featured on gallery home');
