@@ -19,4 +19,4 @@ GitHub Pages now publishes this repository from **`main /docs`**. The first succ
 
 The repo CI verifies all 20 project pages, local asset and navigation links, translations, sitemap, and the absence of private project links.
 
-**Author contacts**: [Telegram @Feudorlab1](https://t.me/Feudorlab1) · [+7 926 041 1145](tel:+79260411145) · [feudor.lab@yandex.ru](mailto:feudor.lab@yandex.ru) · [obzorniky@gmail.com](mailto:obzorniky@gmail.com) · [peginelab.ru](https://peginelab.ru/).
+**Author contacts**: [Telegram @Feudorlab1](https://t.me/Feudorlab1) · [feudor.lab@yandex.ru](mailto:feudor.lab@yandex.ru) · [obzorniky@gmail.com](mailto:obzorniky@gmail.com) · [peginelab.ru](https://peginelab.ru/).

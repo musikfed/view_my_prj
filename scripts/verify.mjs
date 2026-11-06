@@ -15,6 +15,13 @@ assert(new Set(publicRepoIds).size === 20, 'Expect 20 unique public repositories
 assert(Object.keys(tr.ui).join('|') === supported.join('|'), 'Eleven locales required');
 assert(fs.existsSync(new URL('index.html',root)), 'Missing gallery homepage');
 const home = read('index.html');
+const phonePattern = /(?:\+7|8)[ \t()\-]*\d{3}[ \t()\-]*\d{3}[ \t()\-]*\d{2}[ \t()\-]*\d{2}/;
+function checkPhoneFree(page, name) {
+  assert(!page.includes('href="tel:') && !phonePattern.test(page), 'Personal phone leaked into '+name);
+}
+checkPhoneFree(home, 'main catalog');
+const repoReadme = fs.readFileSync(new URL('../README.md',root),'utf8');
+checkPhoneFree(repoReadme, 'README');
 assert(home.includes('REAL SOURCE REFERENCES') || home.includes('LIVE SOURCE REFERENCES'), 'Main site should describe authentic source visuals');
 assert(home.includes('data-personal-site') && home.includes('https://musikfed.github.io/my_self/ru/'), 'Author site link missing');
 for (const language of supported) assert(typeof tr.ui[language][13] === 'string' && tr.ui[language][13], 'Missing author-link translation '+language);
@@ -129,6 +136,7 @@ console.log('Verified '+d.projects.length+' independent project pages, '+preview
 // SSR multilingual entry points: real content, not JS-only translations.
 for (const lang of supported) {
   const page = read(lang + '/index.html');
+  checkPhoneFree(page, lang+' catalog');
   assert(page.includes('rel="canonical" href="https://musikfed.github.io/view_my_prj/' + lang + '/"'), 'Missing canonical for '+lang);
   assert((page.match(/hreflang=/g)||[]).length===12, 'Missing 11-way hreflang plus x-default for '+lang);
   assert(page.includes('lang="'+(lang==='zh'?'zh-Hans':lang)+'"'), 'Bad HTML lang for '+lang);
