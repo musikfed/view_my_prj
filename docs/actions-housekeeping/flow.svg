@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+<title id="title">PEGINELAB Actions Housekeeping — automation diagram</title>
+<desc id="desc">An event every four hours launches a runner, authenticates using an Actions write token, enumerates accessible repositories, filters only completed workflow runs older than 48 hours, and cleans old run logs and artifacts. Caches unused for 14 days are treated separately. Source files and active workflows are preserved.</desc>
+<rect width="1280" height="480" rx="26" fill="#081521"/>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#132637"/><stop offset="1" stop-color="#0c1c2a"/></linearGradient><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5 0 9Z" fill="#8edacb"/></marker></defs>
+<text x="42" y="52" fill="#e8f5f8" font-family="Arial,sans-serif" font-weight="bold" font-size="25">PEGINELAB / ACTIONS HOUSEKEEPING</text>
+<text x="43" y="80" fill="#96adb9" font-family="Arial,sans-serif" font-size="15">Centralized, scheduled GitHub Actions history maintenance</text>
+<g stroke="#35546a" stroke-width="1.5" fill="url(#g)">
+<rect x="40" y="127" width="204" height="186" rx="17"/><rect x="290" y="127" width="204" height="186" rx="17"/><rect x="540" y="127" width="204" height="186" rx="17"/><rect x="790" y="127" width="204" height="186" rx="17"/><rect x="1040" y="127" width="200" height="186" rx="17"/>
+</g>
+<g font-family="Arial,sans-serif" fill="#f0f6f9" text-anchor="middle">
+<text x="142" y="164" font-size="27">01</text><text x="392" y="164" font-size="27">02</text><text x="642" y="164" font-size="27">03</text><text x="892" y="164" font-size="27">04</text><text x="1140" y="164" font-size="27">05</text>
+<text x="142" y="199" font-size="19" font-weight="bold">Schedule</text><text x="392" y="199" font-size="19" font-weight="bold">Authenticate</text><text x="642" y="199" font-size="19" font-weight="bold">Discover repos</text><text x="892" y="199" font-size="19" font-weight="bold">Filter runs</text><text x="1140" y="199" font-size="19" font-weight="bold">Remove history</text>
+</g>
+<g fill="#a9cad1" text-anchor="middle" font-family="Arial,sans-serif" font-size="15">
+<text x="142" y="235">Cron: every 4h</text><text x="142" y="257">or manual run</text>
+<text x="392" y="235">Fine-grained token</text><text x="392" y="257">Actions: write</text>
+<text x="642" y="235">All accessible</text><text x="642" y="257">owner repositories</text>
+<text x="892" y="235">Completed only</text><text x="892" y="257">Updated &gt; 48h ago</text>
+<text x="1140" y="235">Run logs + artifacts</text><text x="1140" y="257">Old caches &gt; 14d</text>
+</g>
+<g stroke="#8edacb" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M246 220H279"/><path d="M496 220H529"/><path d="M746 220H779"/><path d="M996 220H1029"/></g>
+<rect x="40" y="352" width="1200" height="78" rx="14" fill="#102a27" stroke="#2f7967"/>
+<text x="63" y="381" fill="#b3e8d6" font-family="Arial,sans-serif" font-size="18" font-weight="bold">PROTECTED / НЕ ТРОГАЕМ:</text>
+<text x="63" y="409" fill="#d6e9e1" font-family="Arial,sans-serif" font-size="17">source code · workflow YAML · branches · commits · releases · queued/running jobs</text>
+</svg>

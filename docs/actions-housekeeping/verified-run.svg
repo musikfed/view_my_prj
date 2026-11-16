@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="418" viewBox="0 0 1140 418" role="img" aria-labelledby="logtitle">
+<title id="logtitle">Verified GitHub Actions run log excerpt: 185 completed runs deleted, zero errors</title><rect width="1140" height="418" rx="18" fill="#0a121d"/><rect width="1140" height="50" rx="18" fill="#152438"/><circle cx="27" cy="25" r="7" fill="#df6e6b"/><circle cx="51" cy="25" r="7" fill="#e2b865"/><circle cx="75" cy="25" r="7" fill="#65c69b"/><text x="110" y="31" fill="#c9d6e3" font-family="monospace" font-size="16">Actions / cleanup / verified run #43885787973</text>
+<g font-family="Consolas,monospace" font-size="19" fill="#c8d8e4">
+<text x="37" y="101"><tspan fill="#70c7e7">$</tspan> Housekeeping scope: Self; repositories: 1; dry-run: False</text>
+<text x="37" y="149"><tspan fill="#70c7e7">$</tspan> Completed runs older than cutoff: 185</text>
+<text x="37" y="197"><tspan fill="#70c7e7">$</tspan> Unused caches older than cutoff: 0</text>
+<text x="37" y="259" fill="#a7eec9">SUMMARY: runs found=185; runs deleted=185</text>
+<text x="37" y="293" fill="#a7eec9">caches found=0; caches deleted=0; errors=0</text>
+</g><rect x="35" y="324" width="270" height="43" rx="9" fill="#12382e" stroke="#2b8167"/><text x="53" y="352" fill="#b2f6d3" font-family="Arial,sans-serif" font-size="17" font-weight="bold">✓ Completed successfully</text>
+<text x="36" y="401" font-family="Arial,sans-serif" font-size="13" fill="#8196a6">Faithful visualization of verified log lines; this is NOT a raw screenshot.</text></svg>
