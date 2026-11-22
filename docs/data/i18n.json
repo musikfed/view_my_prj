@@ -437,6 +437,19 @@
       "ja": "ai_video3060_12G：空の公開リポジトリ。構成：Repository created → No source files → Not yet documented → No verified release。",
       "it": "ai_video3060_12G: Repository pubblico vuoto. Componenti: Repository created → No source files → Not yet documented → No verified release.",
       "be": "ai_video3060_12G — Пусты публічны рэпазіторый. Этапы: Repository created → No source files → Not yet documented → No verified release."
+    },
+    "ai_draftsman": {
+      "ru": "Локальная ИИ-студия: быстрый рисунок, SDXL, библиотека графов, SQLite-черновики с русскими переводами и архив изображений.",
+      "en": "Local AI art studio: SDXL image generation, graph templates, SQLite prompt history with Russian translations and a result archive.",
+      "zh": "本地 AI 绘图工作室：SDXL 图像生成、图形工作流模板、SQLite 提示词历史与俄语翻译、结果归档。",
+      "de": "Lokales KI-Zeichenstudio: SDXL-Bildgenerierung, Graphvorlagen, SQLite-Promptverlauf mit russischen Übersetzungen und Ergebnisarchiv.",
+      "hi": "स्थानीय AI चित्र स्टूडियो: SDXL इमेज जनरेशन, ग्राफ टेम्पलेट, रूसी अनुवाद के साथ SQLite प्रॉम्प्ट इतिहास और परिणाम संग्रह।",
+      "fr": "Studio d'illustration IA local : génération SDXL, modèles de graphes, historique SQLite des prompts avec traductions russes et archivage.",
+      "fi": "Paikallinen tekoälypiirtostudio: SDXL-kuvat, graafimallit, SQLite-kehotehistoria venäjänkielisine käännöksineen ja tulosarkisto.",
+      "ko": "로컬 AI 이미지 스튜디오: SDXL 생성, 그래프 템플릿, 러시아어 번역이 포함된 SQLite 프롬프트 이력 및 결과 보관함.",
+      "ja": "ローカルAI画像スタジオ：SDXL生成、グラフテンプレート、ロシア語訳付きSQLiteプロンプト履歴、生成結果アーカイブ。",
+      "it": "Studio IA locale per immagini: generazione SDXL, modelli di grafi, cronologia SQLite dei prompt con traduzioni russe e archivio dei risultati.",
+      "be": "Лакальная ІІ-студыя малюнкаў: SDXL, шаблоны графаў, гісторыя промптаў SQLite з перакладам на рускую і архіў вынікаў."
     }
   }
 }
