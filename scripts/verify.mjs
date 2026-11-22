@@ -11,7 +11,7 @@ const forbidden = ['ChessRust', 'monopost', 'ghost32-project', 'java-to-ai-and-l
 const supported = ['ru','en','zh','de','hi','fr','fi','ko','ja','it','be'];
 
 function assert(check, message){ if(!check) throw new Error(message); }
-assert(new Set(publicRepoIds).size === 21, 'Expect 20 unique public repositories');
+assert(new Set(publicRepoIds).size === 21, 'Expect 21 unique public repositories');
 assert(Object.keys(tr.ui).join('|') === supported.join('|'), 'Eleven locales required');
 assert(fs.existsSync(new URL('index.html',root)), 'Missing gallery homepage');
 const home = read('index.html');
