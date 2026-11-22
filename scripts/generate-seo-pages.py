@@ -2,7 +2,7 @@
 """Generate 11 crawlable, translated static gallery URLs from the real project catalog.
 
 No invented project screens. Each localized HTML contains the translated
-headline, introductory text and 20 descriptions directly in source HTML.
+headline, introductory text and 21 descriptions directly in source HTML.
 """
 from __future__ import annotations
 
@@ -55,11 +55,11 @@ def build(check: bool) -> None:
     source = (ROOT / "index.html").read_text(encoding="utf-8")
     data = json.loads((ROOT / "data/i18n.json").read_text(encoding="utf-8"))
     projects = json.loads((ROOT / "data/projects.json").read_text(encoding="utf-8"))["projects"]
-    if set(data["ui"]) != set(LANGS) or len(projects) != 20:
+    if set(data["ui"]) != set(LANGS) or len(projects) != 21:
         raise SystemExit("Unexpected language count or project catalog size")
     paths = re.findall(r'data-project="([^"]+)"', source)
     if set(paths) != {p["id"] for p in projects}:
-        raise SystemExit("Translations cannot be matched to all 20 displayed project cards")
+        raise SystemExit("Translations cannot be matched to all 21 displayed project cards")
     replacements = (( "Настоящие экраны проектов показываем как изображения или изолированный HTML/CSS. Остальные работы оставляем в разделе исходников. Каждый проект открывается на своей странице.", 0),
                     ("Порядок", 1), ("Сначала новые", 2), ("Сначала старые", 3),
                     ("По названию", 4), ("Год создания", 5), ("Все годы", 6),
@@ -90,7 +90,7 @@ def build(check: bool) -> None:
         page = page.replace('aria-label="Порядок проектов"', 'aria-label="' + html.escape(EXTRA[lang][1]) + '"')
         page = page.replace('aria-label="Фильтр года создания"', 'aria-label="' + html.escape(EXTRA[lang][5]) + '"')
         page = page.replace('<label>Год создания<select', '<label>' + html.escape(EXTRA[lang][5]) + '<select')
-        page = page.replace('20 проектов</output>', '20 ' + html.escape(EXTRA[lang][7]) + '</output>')
+        page = page.replace('21 проектов</output>', '21 ' + html.escape(EXTRA[lang][7]) + '</output>')
         page = page.replace('class="language" aria-label="Выбрать язык"', 'class="language" aria-label="' + html.escape(CHOOSE[lang]) + '"')
         page = page.replace('class="locale-caption" for="language">Выбрать язык', 'class="locale-caption" for="language">' + html.escape(CHOOSE[lang]))
         # Replace every visible catalog status/CTA/date prefix in the source HTML.
@@ -102,7 +102,7 @@ def build(check: bool) -> None:
         # The browser can choose any locale; no country/IP redirect is needed.
         page = page.replace('<html lang="ru">', '<html lang="' + SITE_LANG.get(lang, lang) + '">', 1)
         title = ui[0] + " | PEGINELAB · Project portfolio"
-        description = ui[1] + " · PEGINELAB — 20 source-backed projects."
+        description = ui[1] + " · PEGINELAB — 21 source-backed projects."
         page = re.sub(r'<title>[^<]*</title>', '<title>' + html.escape(title) + '</title>', page, count=1)
         page = re.sub(r'<meta name="description" content="[^"]*">',
                       '<meta name="description" content="' + html.escape(description, quote=True) + '">', page, count=1)
@@ -132,7 +132,7 @@ def build(check: bool) -> None:
         write(ROOT / lang / "index.html", page, check)
         print(lang, len(page), "SSR HTML characters")
 
-    # Keep the original twenty project-detail URLs in the sitemap; add 11
+    # Keep the original twenty-one project-detail URLs in the sitemap; add 11
     # localized catalog entry points, not duplicate pages with untranslated text.
     sitemap = ROOT / "sitemap.xml"
     raw = sitemap.read_text(encoding="utf-8")

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "publishedOnly": true,
-  "updated": "2026-11-06",
+  "updated": "2026-11-22",
   "contact": {
     "telegram": "https://t.me/Feudorlab1",
     "emails": [
@@ -11,6 +11,28 @@
     "website": "https://peginelab.ru/"
   },
   "projects": [
+    {
+      "id": "ai_draftsman",
+      "title": "PEGINELAB AI Draftsman",
+      "eyebrow": "LOCAL AI ART STUDIO · SDXL · SQLITE",
+      "kind": "art",
+      "accent": "#e99937",
+      "tagline": "Локальная ИИ-студия рисунков и проектов",
+      "description": "Локальная студия генерации изображений: быстрый рисунок, версии промптов и переводы, галерея результатов, архив, перегенерация, графы проектов и мониторинг GPU. Показаны реальные экраны экспериментального стенда.",
+      "image": "https://raw.githubusercontent.com/musikfed/ai_draftsman/main/docs/screenshots/quick-generation-20261122.webp",
+      "image2": "https://raw.githubusercontent.com/musikfed/ai_draftsman/main/docs/screenshots/result-cards-20261122.webp",
+      "stack": [
+        "Flask",
+        "Python",
+        "Ollama",
+        "SQLite",
+        "SDXL",
+        "RTX 3060"
+      ],
+      "source": "templates/studio.html · docs/screenshots",
+      "status": "Рабочая локальная лаборатория; часть функций экспериментальная",
+      "created_at": "2026-11-17T12:33:49Z"
+    },
     {
       "id": "achewiw",
       "title": "ACHEWIW",
