@@ -35,7 +35,7 @@ jobs:
               html = (Path("docs")/lang/"index.html").read_text(encoding="utf-8")
               assert f'<link rel="canonical" href="{base}{lang}/">' in html
               assert html.count('<link rel="alternate" hreflang=') == 12
-              assert html.count('data-project=') == 20
+              assert html.count('data-project=') == 21
               assert '<h1 data-t="0">' in html and 'href="/view_my_prj/'+lang+'/"' in html
           print("All 11 crawlable catalog home pages validated")
           PY
