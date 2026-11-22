@@ -19,7 +19,7 @@
       "accent": "#e99937",
       "tagline": "Локальная ИИ-студия рисунков и проектов",
       "description": "Локальная студия генерации изображений: быстрый рисунок, версии промптов и переводы, галерея результатов, архив, перегенерация, графы проектов и мониторинг GPU. Показаны реальные экраны экспериментального стенда.",
-      "image": "https://raw.githubusercontent.com/musikfed/ai_draftsman/main/docs/screenshots/quick-generation-20261122.webp",
+      "image": "https://raw.githubusercontent.com/musikfed/ai_draftsman/main/docs/screenshots/results-closer-20261122.webp?v=20261122-sharp",
       "image2": "https://raw.githubusercontent.com/musikfed/ai_draftsman/main/docs/screenshots/result-cards-20261122.webp",
       "stack": [
         "Flask",
