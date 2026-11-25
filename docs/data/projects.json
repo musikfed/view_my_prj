@@ -41,9 +41,9 @@
       "accent": "#a57849",
       "light": true,
       "tagline": "Типография в кармане",
-      "description": "Закулисная мастерская рассказов, книг и выступлений. Идея, канон, многомодельная редактура, иллюстрации и PDF/DOCX/EPUB.",
-      "image": "https://raw.githubusercontent.com/musikfed/achewiw/main/docs/media/achewiw-home.svg",
-      "image2": "https://raw.githubusercontent.com/musikfed/achewiw/main/docs/media/achewiw-editor-demo.svg",
+      "description": "Локальная студия создания, редактуры и выпуска книг. Рабочий интерфейс: задание, план, генерация Qwen, чат редактуры, история редакций, экспорт PDF/DOCX/EPUB.",
+      "image": "https://raw.githubusercontent.com/musikfed/achewiw/main/docs/screenshots/02-studio-home-20261125.png",
+      "image2": "https://raw.githubusercontent.com/musikfed/achewiw/main/docs/screenshots/03-editorial-chat-20261125.png",
       "site": "https://musikfed.github.io/achewiw/",
       "stack": [
         "FastAPI",
@@ -51,7 +51,7 @@
         "SQLite",
         "ComfyUI"
       ],
-      "source": "docs/media/achewiw-home.svg",
+      "source": "docs/screenshots · реальные снимки Studio, 25.11.2026",
       "status": "Авторская студия, активная разработка",
       "created_at": "2026-11-02T08:29:57Z"
     },
